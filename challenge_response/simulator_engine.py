@@ -64,7 +64,7 @@ def create_challenge(claimant,prover,challenger):
 
 def start_timer(claimant,prover,node_id,timeofpos,duration):
     
-    timer = {'prover':"DEFAULT", 'challenger':0, 'challenge':"default challenge"}
+    timer = {'timer_claimant':"DEFAULT",'timer_started_for':"DEFAULT", 'timer_started_by':0, 'prover_pos_time':0,'duration':0}
     
     timer['timer_claimant'] = claimant
     timer['timer_started_for'] = prover
@@ -169,17 +169,20 @@ def node_handler(node_id,action,e,timeofevent):
 
         timeofevent = e['time']+e['details']['duration']
         timeofpos = e['details']['prover_pos_time']
-        if globalvars.max_reached == 1:
-            assertion = update_assertion(node_id,e['details']['timer_started_for'],globalvars.pos[e['details']['timer_started_for']],globalvars.confidence_table[node_id][e['details']['timer_started_for']],timeofpos,timeofevent)
+    #    if globalvars.max_reached == 1:
+    #        globalvars.max_reached = 0
 
-            event_id = "ASSERTION_%03d" % (globalvars.idn)
-            globalvars.idn += 1
+        assertion = update_assertion(node_id,e['details']['timer_started_for'],globalvars.pos[e['details']['timer_started_for']],globalvars.confidence_table[node_id][e['details']['timer_started_for']],timeofpos,timeofevent)
 
-            e = create_event(event_id,node_id,assertion,globalvars.now)
-            globalvars.event_queue.append(deepcopy(e))
+        print("Preparing assertion to send: ",assertion)
+        event_id = "ASSERTION_%03d" % (globalvars.idn)
+        globalvars.idn += 1
 
-            #sort queue according to the simulated real time (time of event happening)
-            globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
+        e = create_event(event_id,node_id,assertion,globalvars.now)
+        globalvars.event_queue.append(deepcopy(e))
+
+        #sort queue according to the simulated real time (time of event happening)
+        globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
 
         
         
@@ -194,7 +197,7 @@ def update_confidence(success,prover,agent,claimant,e):
     if success == 1:#direct verification success
         if globalvars.confidence_table[agent][prover]!=5:
             globalvars.confidence_table[agent][prover] = 5
-            globalvars.max_reached += 1
+          #  globalvars.max_reached += 1
         #node_handler(agent,"SEND_ASSERTION",e)
 
     if success == 0:#direct verification failure
@@ -217,10 +220,10 @@ def calc_distance(i,j):
 
     p = np.array([globalvars.pos[i][0],globalvars.pos[i][1],globalvars.pos[i][2]])
     q = np.array([globalvars.pos[j][0],globalvars.pos[j][1],globalvars.pos[j][2]])
-    print(p)
-    print(q)
+ #   print(p)
+  #  print(q)
     d = np.linalg.norm(p-q) 
-    print(d) 
+   # print(d) 
 
     #convert to feet
     d = d*100
@@ -235,10 +238,10 @@ def is_in_direct_view(agent1,agent2):
     l = abs(globalvars.pos[agent2][0]-globalvars.pos[agent1][0])
     m = abs(globalvars.pos[agent2][1]-globalvars.pos[agent1][1])
     n = abs(globalvars.pos[agent2][2]-globalvars.pos[agent1][2])
-    print("l",l) 
-    print("m",m) 
-    print("n",n) 
-    
+ #   print("l",l) 
+ #   print("m",m) 
+ #   print("n",n) 
+ #   
 
     #print("Direction ratios:",l,m,n)
     #Choose either of the two given points say, we choose (x1, y1, z1).
@@ -248,14 +251,14 @@ def is_in_direct_view(agent1,agent2):
     #check with all other points if they lie on the line segment
     for i in range(globalvars.number_of_nodes):
         if i != agent2 and i != agent1:
-            print("third point is ",globalvars.pos[i])
+         #   print("third point is ",globalvars.pos[i])
             if l>0 and m>0 and n>0:
                 a = abs(globalvars.pos[i][0]-globalvars.pos[agent1][0])/l
                 b = abs(globalvars.pos[i][1]-globalvars.pos[agent1][1])/m
                 c = abs(globalvars.pos[i][2]-globalvars.pos[agent1][2])/n
-                print("a=",a)
-                print("b=",b)
-                print("c=",c)
+ #               print("a=",a)
+ #               print("b=",b)
+ #               print("c=",c)
                 if a == b and b == c:
                     return 0 #not in direct view, some point is blocking
                 else:
@@ -264,8 +267,8 @@ def is_in_direct_view(agent1,agent2):
             if l == 0 and m>0 and n>0:
                 b = abs(globalvars.pos[i][1]-globalvars.pos[agent1][1])/m
                 c = abs(globalvars.pos[i][2]-globalvars.pos[agent1][2])/n
-                print("c=",c)
-                print("b=",b)
+         #       print("c=",c)
+         #       print("b=",b)
                 if b == c and globalvars.pos[i][0] == globalvars.pos[agent1][0] and globalvars.pos[i][0] == c:
                     return 0
                 else:
@@ -274,8 +277,8 @@ def is_in_direct_view(agent1,agent2):
             if l > 0 and m == 0 and n>0:
                 a = abs(globalvars.pos[i][0]-globalvars.pos[agent1][0])/l
                 c = abs(globalvars.pos[i][2]-globalvars.pos[agent1][2])/n
-                print("a=",a)
-                print("c=",c)
+         #       print("a=",a)
+         #       print("c=",c)
                 if a == c and globalvars.pos[i][1] == globalvars.pos[agent1][1] and globalvars.pos[agent1][1] == c:
                     return 0
                 else:
@@ -284,8 +287,8 @@ def is_in_direct_view(agent1,agent2):
             if l > 0 and m > 0 and n == 0:
                 a = abs(globalvars.pos[i][0]-globalvars.pos[agent1][0])/l
                 b = abs(globalvars.pos[i][1]-globalvars.pos[agent1][1])/m
-                print("a=",a)
-                print("b=",b)
+         #       print("a=",a)
+         #       print("b=",b)
 
                 if b == a and globalvars.pos[i][2] == globalvars.pos[agent1][2] and globalvars.pos[agent1][1] == a:
                     return 0
@@ -325,8 +328,8 @@ def check_verifiability(agent1,agent2):
     verifiability = 0
     p = np.array([globalvars.pos[agent1][0],globalvars.pos[agent1][1],globalvars.pos[agent1][2]])
     q = np.array([globalvars.pos[agent2][0],globalvars.pos[agent2][1],globalvars.pos[agent2][2]])
-    print(p)
-    print(q)
+  #  print(p)
+  #  print(q)
  
     if ret == 1:
         #check distance
@@ -349,7 +352,26 @@ def check_verifiability(agent1,agent2):
         print("Agents ",agent1,"and",agent2," are NOT in direct view; Verifiability = ",verifiability)
 
     return verifiability
-   
+
+
+def update_database(my_id,e):
+
+    globalvars.flag = 1
+    #tup = (x, y, z, s, t) x = agent whose databse this is, y = agent whose position is in database, z = position of y, s= sender of assertion, p = time of position 
+
+    tup = (my_id,e['details']['agent'],e['details']['position'],e['details']['sender'],e['details']['timeofposition'])
+    globalvars.database.append(tup)
+  #  print(globalvars.database[my_id][e['details']['agent']]['timeofposition'])
+      
+
+def check_database(my_id,assertion_pos,assertion_time,pos_agent):
+    for i in range(len(globalvars.database)):
+      if globalvars.database[0] == my_id:
+          if assertion_pos == globalvars.database[2] and assertion_time == globalvars.database[4] and pos_agent ==globalvars.database[1]:
+              return globalvars.database[3]
+    return 99999
+
+
 def process_event(e):
 
     if "ASSERTION" in e['event_id']:
@@ -358,21 +380,51 @@ def process_event(e):
         globalvars.now += globalvars.e_now 
 
         for i in range(globalvars.number_of_nodes): #everyone received because wireless communication is infinite
-            if e['agent'] != i:
-                ret = check_verifiability(e['agent'],i) #TODO should take position from the assertion. Right now for the all-honest case it is fine.
+            if e['agent'] != i:#e['agent'] is making the assertion
+                if e['details']['sender'] != e['details']['agent']:#sender is different that pos-agent
+                    update_database(i,e)
+                    print("globalvars.database")
+                    print(globalvars.database)
+
+                ret = check_verifiability(e['details']['agent'],i) #TODO should take position from the assertion. Right now for the all-honest case it is fine. medium priority
+                #ret = check_verifiability(e['agent'],i) #TODO should take position from the assertion. Right now for the all-honest case it is fine. medium priority
                 dist = calc_distance(e['agent'],i)
                 transmission_delay = 0.008 #seconds
                 dist = 0.3048*100*dist
                 propagation_delay = dist/globalvars.speed
                 timeofevent = e['time'] + transmission_delay + propagation_delay
                 if ret > 0:
-                    node_handler(i,"SEND_CHALLENGE",e,timeofevent)
+
+                    #if challenge not done yet
+                    if globalvars.confidence_table[i][e['details']['agent']]!=5:
+                        node_handler(i,"SEND_CHALLENGE",e,timeofevent)
+                    #update_database(i,e)
+                    #print(globalvars.database)
                 if ret == 0:
-                    delta=(timeofevent-e['time'])/10
+
                     prev = globalvars.confidence_table[i][e['details']['agent']]
-                    globalvars.confidence_table[i][e['details']['agent']] +=  (globalvars.confidence_table[i][e['details']['agent']])/ (delta+1) + globalvars.trust_table[i][e['details']['sender']]*globalvars.confidence_table[e['details']['sender']][e['details']['agent']]
+                    sender = 99999
+                    sender = check_database(i,e['details']['position'],e['details']['timeofposition'],e['details']['agent'])
+                    
+                    if sender != 99999:
+                        print("here")
+                        print("previous sender was:", sender)
+                        delta=(timeofevent-e['time'])/10
+                        #prev = globalvars.confidence_table[i][e['details']['agent']]
+                        globalvars.confidence_table[i][e['details']['agent']] +=  (globalvars.confidence_table[i][e['details']['agent']])/ (delta+1) + globalvars.trust_table[i][sender]*globalvars.confidence_table[sender][e['details']['agent']]
+
+                        print("updating confidence based on trust")
+                    else:
+                        delta=(timeofevent-e['time'])/10
+                        globalvars.confidence_table[i][e['details']['agent']] +=  (globalvars.confidence_table[i][e['details']['agent']])/ (delta+1) + globalvars.trust_table[i][e['details']['sender']]*globalvars.confidence_table[e['details']['sender']][e['details']['agent']]
+
+                        print("updating confidence based on trust")
+
+
                     if globalvars.confidence_table[i][e['details']['agent']] > prev:
-                        #add assertion event in node_handler TODO
+                        #add assertion event in node_handler TODO low priority
+
+                        print("agent ",i, "sending position of agent",e['details']['agent'])
                         assertion = update_assertion(i,e['details']['agent'],globalvars.pos[e['details']['agent']],globalvars.confidence_table[i][e['details']['agent']],e['details']['timeofposition'],timeofevent)
 
                         event_id = "ASSERTION_%03d" % (globalvars.idn)
@@ -385,8 +437,8 @@ def process_event(e):
                         globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
 
                         #node_handler(i,"SEND_ASSERTION",e)
-
-
+                   
+                    
 
     if "CHALLENGE" in e['event_id']:
         #turn on flashlight for all the agents who got the challenge
@@ -403,7 +455,18 @@ def process_event(e):
         #create a timer expiry event for every timerstart event
         timeofevent = e['time']+ e['details']['duration'] 
         node_handler(e['details']['timer_started_by'],"TIMER_EXPIRY",e,timeofevent)
-        
+    
+
+
+
+#def make_database(): 
+#
+#    tup = (999999,9999,9999,999)
+#    globalvars.database.append(tup)
+#    print(globalvars.database)
+
+
+
 def make_confidence_table(): 
     from collections import defaultdict
     from itertools import permutations 
@@ -462,6 +525,9 @@ def main():
     #create confidence table
     make_confidence_table()
     make_trust_table()
+    #make_database()
+    
+   # globalvars.database = [{'sender':9999, 'position':(9999,9999,9999), 'pos_id':9999} for i in range(globalvars.number_of_nodes)]
     
     #extract_confidence_from_database(0)
     #sys.exit()
@@ -469,6 +535,8 @@ def main():
     e = {'event_id':"DEFAULT", 'agent':0,'time':0}
     for i in range(globalvars.number_of_nodes):
         node_handler(i,"SEND_PERIODIC_ASSERTION",e,0);
+        #node_handler(i,"SEND_PERIODIC_ASSERTION",e,5);
+        #node_handler(i,"SEND_PERIODIC_ASSERTION",e,10);
         
     print("Initial events:")
     print(*globalvars.event_queue,sep="\n")
@@ -482,6 +550,8 @@ def main():
         print(globalvars.confidence_table)
         print("\ntrust_table\n")
         print(globalvars.trust_table)
+        print("globalvars.database")
+        print(globalvars.database)
 
         print("\nEVENT QUEUE:\n")
         print("-----------------")

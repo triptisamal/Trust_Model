@@ -14,6 +14,8 @@ def init():
     global trust_table
     global max_reached
     global speed
+    global database
+    global flag
 
     number_of_nodes = 0
     pos = []
@@ -26,4 +28,7 @@ def init():
     trust_table = defaultdict(dict)
     max_reached = 0
     speed = 299792458 #m / s
+    database = []
+    #database = defaultdict(lambda: {'sender':9999, 'position':(9999,9999,9999)})
+    flag = 0
 
