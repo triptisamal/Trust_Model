@@ -16,6 +16,11 @@ def init():
     global speed
     global database
     global flag
+    global decay
+    global refresh_period
+    global direct_verification_score
+    global cf_min
+    global alpha
 
     number_of_nodes = 0
     pos = []
@@ -31,4 +36,9 @@ def init():
     database = []
     #database = defaultdict(lambda: {'sender':9999, 'position':(9999,9999,9999)})
     flag = 0
+    decay = 44.4
+    refresh_period = 20
+    direct_verification_score = 16
+    cf_min = 5
+    alpha = 1 #trust score
 
