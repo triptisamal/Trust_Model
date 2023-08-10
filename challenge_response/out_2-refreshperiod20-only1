@@ -1,0 +1,982 @@
+SIMULATOR: Number of agents =  3
+SIMULATOR: position of all agents:  {0: (0, 0, 0), 1: (0, 1, 0), 2: (0, 2, 0)}
+SIMULATOR: Initial events:
+{'event_id': 'ASSERTION_000', 'agent': 0, 'time': 0, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'ASSERTION_001', 'agent': 1, 'time': 0, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'ASSERTION_002', 'agent': 2, 'time': 0, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0)]
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  0
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0)]
+SIMULATOR: Agents  0 and 2  are NOT in direct view; Verifiability =  0
+AGENT  2 : Cannot directy verify the position of agent  0
+AGENT  2 : Checking database, there is no previous sender for this position and time assertion.
+AGENT  2 : Updating confidence for position of  0  without direct verification
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_000', 'agent': 0, 'time': 0, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+
+SIMULATOR: Time of the Event:  0
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 16, 2: 0}, 1: {0: 0, 1: 16, 2: 0}, 2: {0: 0.0, 2: 16, 1: 0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 999, 2: 0}, 1: {0: 0, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_001', 'agent': 1, 'time': 0, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'ASSERTION_002', 'agent': 2, 'time': 0, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'CHALLENGE_004', 'agent': 1, 'time': 1, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1011101101', 'claimant': 0, 'tau': 3}}
+{'event_id': 'TIMERSTART_005', 'agent': 1, 'time': 1, 'details': {'timer_claimant': 0, 'timer_started_for': 0, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0)]
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Can directy verify the position of agent  1
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0)]
+SIMULATOR: Agents  1 and 2  are in direct view; Verifiability =  1
+AGENT  2 : Can directy verify the position of agent  1
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_001', 'agent': 1, 'time': 0, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+
+SIMULATOR: Time of the Event:  0
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 16, 2: 0}, 1: {0: 0, 1: 16, 2: 0}, 2: {0: 0.0, 2: 16, 1: 0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 999, 2: 0}, 1: {0: 0, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_002', 'agent': 2, 'time': 0, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'CHALLENGE_004', 'agent': 1, 'time': 1, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1011101101', 'claimant': 0, 'tau': 3}}
+{'event_id': 'TIMERSTART_005', 'agent': 1, 'time': 1, 'details': {'timer_claimant': 0, 'timer_started_for': 0, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_006', 'agent': 0, 'time': 2, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '110111001111', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_007', 'agent': 0, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0)]
+SIMULATOR: Agents  2 and 0  are NOT in direct view; Verifiability =  0
+AGENT  0 : Cannot directy verify the position of agent  2
+AGENT  0 : Checking database, there is no previous sender for this position and time assertion.
+AGENT  0 : Updating confidence for position of  2  without direct verification
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+SIMULATOR: Agents  2 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  2
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_002', 'agent': 2, 'time': 0, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 5, 'timeofposition': 0, 'timeofevent': 0}}
+
+SIMULATOR: Time of the Event:  0
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 16, 2: 0.0}, 1: {0: 0, 1: 16, 2: 0}, 2: {0: 0.0, 2: 16, 1: 0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 999, 2: 0}, 1: {0: 0, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'CHALLENGE_004', 'agent': 1, 'time': 1, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1011101101', 'claimant': 0, 'tau': 3}}
+{'event_id': 'TIMERSTART_005', 'agent': 1, 'time': 1, 'details': {'timer_claimant': 0, 'timer_started_for': 0, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_006', 'agent': 0, 'time': 2, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '110111001111', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_007', 'agent': 0, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'CHALLENGE_004', 'agent': 1, 'time': 1, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1011101101', 'claimant': 0, 'tau': 3}}
+
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_004', 'agent': 1, 'time': 1, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1011101101', 'claimant': 0, 'tau': 3}}
+
+SIMULATOR: Time of the Event:  1
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 0.0, 0: 16, 2: 0.0}, 1: {0: 0.0, 1: 16, 2: 0.0}, 2: {0: 0.0, 2: 16, 1: 0.0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 999, 2: 0}, 1: {0: 0, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'TIMERSTART_005', 'agent': 1, 'time': 1, 'details': {'timer_claimant': 0, 'timer_started_for': 0, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_006', 'agent': 0, 'time': 2, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '110111001111', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_007', 'agent': 0, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'TIMERSTART_005', 'agent': 1, 'time': 1, 'details': {'timer_claimant': 0, 'timer_started_for': 0, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+AGENT  1 : Updating confidence in position of agent  0  based on direct verification.
+AGENT  1 : Updating trust in agent  0  based on direct verification.
+Preparing assertion to send:  {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}
+
+SIMULATOR: Event processed:  {'event_id': 'TIMERSTART_005', 'agent': 1, 'time': 1, 'details': {'timer_claimant': 0, 'timer_started_for': 0, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+
+SIMULATOR: Time of the Event:  1
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 0.0, 0: 16, 2: 0.0}, 1: {0: 16, 1: 16, 2: 0.0}, 2: {0: 0.0, 2: 16, 1: 0.0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'CHALLENGE_006', 'agent': 0, 'time': 2, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '110111001111', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_007', 'agent': 0, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'CHALLENGE_006', 'agent': 0, 'time': 2, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '110111001111', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_006', 'agent': 0, 'time': 2, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '110111001111', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Time of the Event:  2
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 0.0, 0: 16, 2: 0.0}, 1: {0: 15.310344827586206, 1: 16, 2: 0.0}, 2: {0: 0.0, 2: 16, 1: 0.0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 0, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'TIMERSTART_007', 'agent': 0, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'TIMERSTART_007', 'agent': 0, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 0, 'duration': 3}}
+AGENT  0 : Updating confidence in position of agent  1  based on direct verification.
+AGENT  0 : Updating trust in agent  1  based on direct verification.
+Preparing assertion to send:  {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}
+
+SIMULATOR: Event processed:  {'event_id': 'TIMERSTART_007', 'agent': 0, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 0, 'duration': 3}}
+
+SIMULATOR: Time of the Event:  2
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 16, 0: 16, 2: 0.0}, 1: {0: 15.310344827586206, 1: 16, 2: 0.0}, 2: {0: 0.0, 2: 16, 1: 0.0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_008', 'agent': 2, 'time': 2, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '110101000100001', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Time of the Event:  2
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 16, 0: 16, 2: 0.0}, 1: {0: 15.310344827586206, 1: 16, 2: 0.0}, 2: {0: 0.0, 2: 16, 1: 0.0}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 0}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+AGENT  2 : Updating confidence in position of agent  1  based on direct verification.
+AGENT  2 : Updating trust in agent  1  based on direct verification.
+Preparing assertion to send:  {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}
+
+SIMULATOR: Event processed:  {'event_id': 'TIMERSTART_009', 'agent': 2, 'time': 2, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 0, 'duration': 3}}
+
+SIMULATOR: Time of the Event:  2
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 16, 0: 16, 2: 0.0}, 1: {0: 15.310344827586206, 1: 16, 2: 0.0}, 2: {0: 0.0, 2: 16, 1: 16}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_010', 'agent': 1, 'time': 3, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1010111011', 'claimant': 2, 'tau': 3}}
+
+SIMULATOR: Time of the Event:  3
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 14.987341772151899, 0: 16, 2: 0.0}, 1: {0: 14.341335661283281, 1: 16, 2: 0.0}, 2: {0: 0.0, 2: 16, 1: 14.987341772151899}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 0}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+AGENT  1 : Updating confidence in position of agent  2  based on direct verification.
+AGENT  1 : Updating trust in agent  2  based on direct verification.
+Preparing assertion to send:  {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}
+
+SIMULATOR: Event processed:  {'event_id': 'TIMERSTART_011', 'agent': 1, 'time': 3, 'details': {'timer_claimant': 2, 'timer_started_for': 2, 'timer_started_by': 1, 'prover_pos_time': 0, 'duration': 3}}
+
+SIMULATOR: Time of the Event:  3
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 14.987341772151899, 0: 16, 2: 0.0}, 1: {0: 14.341335661283281, 1: 16, 2: 16}, 2: {0: 0.0, 2: 16, 1: 14.987341772151899}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+
+SIMULATOR: Event processed:  {'event_id': 'RESPONSE_012', 'agent': 0, 'time': 7, 'details': 'yes'}
+
+SIMULATOR: Time of the Event:  7
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 12.94626409890164, 0: 16, 2: 0.0}, 1: {0: 12.388235473948983, 1: 16, 2: 13.821011673151752}, 2: {0: 0.0, 2: 16, 1: 12.94626409890164}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0)]
+SIMULATOR: Agents  0 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Can directy verify the position of agent  1
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0)]
+SIMULATOR: Agents  0 and 2  are NOT in direct view; Verifiability =  0
+AGENT  2 : Cannot directy verify the position of agent  1
+AGENT  2 : Checking database, there is no previous sender for this position and time assertion.
+AGENT  2 : Updating confidence for position of  0  without direct verification
+AGENT  2 : Sending position of agent 0
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_013', 'agent': 1, 'time': 7, 'details': {'sender': 1, 'agent': 0, 'position': (0, 0, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 4}}
+
+SIMULATOR: Time of the Event:  7
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 12.94626409890164, 0: 16, 2: 0.0}, 1: {0: 12.388235473948983, 1: 16, 2: 13.821011673151752}, 2: {0: 12.388235473948983, 2: 16, 1: 12.94626409890164}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_020', 'agent': 2, 'time': 7.008010167033621, 'details': {'sender': 2, 'agent': 0, 'position': (0, 0, 0), 'confidence': 12.388235473948983, 'timeofposition': 0, 'timeofevent': 7.008010167033621}}
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0)]
+SIMULATOR: Agents  0 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Can directy verify the position of agent  2
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0)]
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  2
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_020', 'agent': 2, 'time': 7.008010167033621, 'details': {'sender': 2, 'agent': 0, 'position': (0, 0, 0), 'confidence': 12.388235473948983, 'timeofposition': 0, 'timeofevent': 7.008010167033621}}
+
+SIMULATOR: Time of the Event:  7.008010167033621
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 11.18141169291636, 0: 16, 2: 0.0}, 1: {0: 10.699454292359619, 1: 16, 2: 11.936912482978276}, 2: {0: 10.699454292359619, 2: 16, 1: 11.18141169291636}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+
+SIMULATOR: Event processed:  {'event_id': 'RESPONSE_014', 'agent': 1, 'time': 11, 'details': 'yes'}
+
+SIMULATOR: Time of the Event:  11
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 8.961275797210947, 0: 16, 2: 0.0}, 1: {0: 8.575013909400129, 1: 16, 2: 9.566767405130603}, 2: {0: 8.575013909400129, 2: 16, 1: 8.961275797210947}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0)]
+SIMULATOR: Agents  1 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  0
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0)]
+SIMULATOR: Agents  1 and 2  are in direct view; Verifiability =  1
+AGENT  2 : Can directy verify the position of agent  0
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_015', 'agent': 0, 'time': 11, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+
+SIMULATOR: Time of the Event:  11
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 8.961275797210947, 0: 16, 2: 0.0}, 1: {0: 8.575013909400129, 1: 16, 2: 9.566767405130603}, 2: {0: 8.575013909400129, 2: 16, 1: 8.961275797210947}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+
+SIMULATOR: Event processed:  {'event_id': 'RESPONSE_016', 'agent': 1, 'time': 15, 'details': 'yes'}
+
+SIMULATOR: Time of the Event:  15
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 6.69832736357182, 0: 16, 2: 0.0}, 1: {0: 6.409606356521309, 1: 16, 2: 7.150917050299643}, 2: {0: 6.409606356521309, 2: 16, 1: 6.69832736357182}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0)]
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Can directy verify the position of agent  2
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0)]
+SIMULATOR: Agents  1 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  2
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_017', 'agent': 2, 'time': 15, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 5}}
+
+SIMULATOR: Time of the Event:  15
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 6.69832736357182, 0: 16, 2: 0.0}, 1: {0: 6.409606356521309, 1: 16, 2: 7.150917050299643}, 2: {0: 6.409606356521309, 2: 16, 1: 6.69832736357182}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+
+SIMULATOR: Event processed:  {'event_id': 'RESPONSE_018', 'agent': 2, 'time': 19, 'details': 'yes'}
+
+SIMULATOR: Time of the Event:  19
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 4.690942191523482, 0: 16, 2: 0.0}, 1: {0: 4.48874640740609, 1: 16, 2: 5.007897745004797}, 2: {0: 4.48874640740609, 2: 16, 1: 4.690942191523482}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0)]
+SIMULATOR: Agents  2 and 0  are NOT in direct view; Verifiability =  0
+AGENT  0 : Cannot directy verify the position of agent  1
+AGENT  0 : Checking database, there is no previous sender for this position and time assertion.
+AGENT  0 : Updating confidence for position of  2  without direct verification
+AGENT  0 : Sending position of agent 2
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0)]
+SIMULATOR: Agents  2 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  0
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0)]
+SIMULATOR: Agents  2 and 2  are in direct view; Verifiability =  1
+AGENT  2 : Can directy verify the position of agent  0
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_019', 'agent': 1, 'time': 19, 'details': {'sender': 1, 'agent': 2, 'position': (0, 2, 0), 'confidence': 16, 'timeofposition': 0, 'timeofevent': 6}}
+
+SIMULATOR: Time of the Event:  19
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 4.690942191523482, 0: 16, 2: 5.007897745004797}, 1: {0: 4.48874640740609, 1: 16, 2: 5.007897745004797}, 2: {0: 4.48874640740609, 2: 16, 1: 4.690942191523482}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_021', 'agent': 0, 'time': 19.00801016703362, 'details': {'sender': 0, 'agent': 2, 'position': (0, 2, 0), 'confidence': 5.007897745004797, 'timeofposition': 0, 'timeofevent': 19.00801016703362}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0)]
+SIMULATOR: Agents  2 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  0
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0)]
+SIMULATOR: Agents  2 and 2  are in direct view; Verifiability =  1
+AGENT  2 : Can directy verify the position of agent  0
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_021', 'agent': 0, 'time': 19.00801016703362, 'details': {'sender': 0, 'agent': 2, 'position': (0, 2, 0), 'confidence': 5.007897745004797, 'timeofposition': 0, 'timeofevent': 19.00801016703362}}
+
+SIMULATOR: Time of the Event:  19.00801016703362
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 3.2847243235512864, 0: 16, 2: 3.50666515622367}, 1: {0: 3.1431413785706273, 1: 16, 2: 3.50666515622367}, 2: {0: 3.1431413785706273, 2: 16, 1: 3.2847243235512864}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20)]
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Can directy verify the position of agent  1
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20)]
+SIMULATOR: Agents  1 and 2  are in direct view; Verifiability =  1
+AGENT  2 : Can directy verify the position of agent  1
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_003', 'agent': 1, 'time': 20, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 5, 'timeofposition': 20, 'timeofevent': 20}}
+
+SIMULATOR: Time of the Event:  20
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 2.264623601951508, 0: 16, 2: 2.4176387101914742}, 1: {0: 2.1670105156604946, 1: 16, 2: 2.4176387101914742}, 2: {0: 2.1670105156604946, 2: 16, 1: 2.264623601951508}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'CHALLENGE_022', 'agent': 0, 'time': 26, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '10100001111', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_023', 'agent': 0, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 20, 'duration': 3}}
+{'event_id': 'CHALLENGE_024', 'agent': 2, 'time': 26, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '111111100001011', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_025', 'agent': 2, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 20, 'duration': 3}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'CHALLENGE_022', 'agent': 0, 'time': 26, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '10100001111', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_022', 'agent': 0, 'time': 26, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '10100001111', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Time of the Event:  26
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 1.4282569307762352, 0: 16, 2: 1.5247607774503047}, 1: {0: 1.36669413203588, 1: 16, 2: 1.5247607774503047}, 2: {0: 1.36669413203588, 2: 16, 1: 1.4282569307762352}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 1, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'TIMERSTART_023', 'agent': 0, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 20, 'duration': 3}}
+{'event_id': 'CHALLENGE_024', 'agent': 2, 'time': 26, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '111111100001011', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_025', 'agent': 2, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 20, 'duration': 3}}
+{'event_id': 'RESPONSE_026', 'agent': 1, 'time': 30, 'details': 'yes'}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'TIMERSTART_023', 'agent': 0, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 20, 'duration': 3}}
+AGENT  0 : Updating confidence in position of agent  1  based on direct verification.
+AGENT  0 : Updating trust in agent  1  based on direct verification.
+Preparing assertion to send:  {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}
+
+SIMULATOR: Event processed:  {'event_id': 'TIMERSTART_023', 'agent': 0, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 0, 'prover_pos_time': 20, 'duration': 3}}
+
+SIMULATOR: Time of the Event:  26
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 16, 0: 16, 2: 1.5247607774503047}, 1: {0: 1.36669413203588, 1: 16, 2: 1.5247607774503047}, 2: {0: 1.36669413203588, 2: 16, 1: 1.4282569307762352}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'CHALLENGE_024', 'agent': 2, 'time': 26, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '111111100001011', 'claimant': 1, 'tau': 3}}
+{'event_id': 'TIMERSTART_025', 'agent': 2, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 20, 'duration': 3}}
+{'event_id': 'RESPONSE_026', 'agent': 1, 'time': 30, 'details': 'yes'}
+{'event_id': 'ASSERTION_027', 'agent': 0, 'time': 30, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'CHALLENGE_024', 'agent': 2, 'time': 26, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '111111100001011', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_024', 'agent': 2, 'time': 26, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '111111100001011', 'claimant': 1, 'tau': 3}}
+
+SIMULATOR: Time of the Event:  26
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 16, 0: 16, 2: 1.5247607774503047}, 1: {0: 1.36669413203588, 1: 16, 2: 1.5247607774503047}, 2: {0: 1.36669413203588, 2: 16, 1: 1.4282569307762352}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 1}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'TIMERSTART_025', 'agent': 2, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 20, 'duration': 3}}
+{'event_id': 'RESPONSE_026', 'agent': 1, 'time': 30, 'details': 'yes'}
+{'event_id': 'ASSERTION_027', 'agent': 0, 'time': 30, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+{'event_id': 'RESPONSE_028', 'agent': 1, 'time': 34, 'details': 'yes'}
+===============================================================================
+
+
+
+SIMULATOR: Event: {'event_id': 'TIMERSTART_025', 'agent': 2, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 20, 'duration': 3}}
+AGENT  2 : Updating confidence in position of agent  1  based on direct verification.
+AGENT  2 : Updating trust in agent  1  based on direct verification.
+Preparing assertion to send:  {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}
+
+SIMULATOR: Event processed:  {'event_id': 'TIMERSTART_025', 'agent': 2, 'time': 26, 'details': {'timer_claimant': 1, 'timer_started_for': 1, 'timer_started_by': 2, 'prover_pos_time': 20, 'duration': 3}}
+
+SIMULATOR: Time of the Event:  26
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 16, 0: 16, 2: 1.5247607774503047}, 1: {0: 1.36669413203588, 1: 16, 2: 1.5247607774503047}, 2: {0: 1.36669413203588, 2: 16, 1: 16}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 2}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'RESPONSE_026', 'agent': 1, 'time': 30, 'details': 'yes'}
+{'event_id': 'ASSERTION_027', 'agent': 0, 'time': 30, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+{'event_id': 'RESPONSE_028', 'agent': 1, 'time': 34, 'details': 'yes'}
+{'event_id': 'ASSERTION_029', 'agent': 2, 'time': 34, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+===============================================================================
+
+
+
+
+SIMULATOR: Event processed:  {'event_id': 'RESPONSE_026', 'agent': 1, 'time': 30, 'details': 'yes'}
+
+SIMULATOR: Time of the Event:  30
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 9.548387096774194, 0: 16, 2: 0.9099378833171173}, 1: {0: 0.8156077884730252, 1: 16, 2: 0.9099378833171173}, 2: {0: 0.8156077884730252, 2: 16, 1: 9.548387096774194}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 2}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_027', 'agent': 0, 'time': 30, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+{'event_id': 'RESPONSE_028', 'agent': 1, 'time': 34, 'details': 'yes'}
+{'event_id': 'ASSERTION_029', 'agent': 2, 'time': 34, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20), (1, 1, (0, 1, 0), 0, 20)]
+SIMULATOR: Agents  1 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  0
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20), (1, 1, (0, 1, 0), 0, 20), (2, 1, (0, 1, 0), 0, 20)]
+SIMULATOR: Agents  1 and 2  are in direct view; Verifiability =  1
+AGENT  2 : Can directy verify the position of agent  0
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_027', 'agent': 0, 'time': 30, 'details': {'sender': 0, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+
+SIMULATOR: Time of the Event:  30
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 9.548387096774194, 0: 16, 2: 0.9099378833171173}, 1: {0: 0.8156077884730252, 1: 16, 2: 0.9099378833171173}, 2: {0: 0.8156077884730252, 2: 16, 1: 9.548387096774194}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 2}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20), (1, 1, (0, 1, 0), 0, 20), (2, 1, (0, 1, 0), 0, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'RESPONSE_028', 'agent': 1, 'time': 34, 'details': 'yes'}
+{'event_id': 'ASSERTION_029', 'agent': 2, 'time': 34, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+===============================================================================
+
+
+
+
+SIMULATOR: Event processed:  {'event_id': 'RESPONSE_028', 'agent': 1, 'time': 34, 'details': 'yes'}
+
+SIMULATOR: Time of the Event:  34
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 5.407504937458854, 0: 16, 2: 0.5153219645316327}, 1: {0: 0.461900329186254, 1: 16, 2: 0.5153219645316327}, 2: {0: 0.461900329186254, 2: 16, 1: 5.407504937458854}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 2}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20), (1, 1, (0, 1, 0), 0, 20), (2, 1, (0, 1, 0), 0, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+{'event_id': 'ASSERTION_029', 'agent': 2, 'time': 34, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+===============================================================================
+
+
+
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20), (1, 1, (0, 1, 0), 0, 20), (2, 1, (0, 1, 0), 0, 20), (0, 1, (0, 1, 0), 2, 20)]
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Can directy verify the position of agent  2
+SIMULATOR: globalvars.database:
+SIMULATOR:  [(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20), (1, 1, (0, 1, 0), 0, 20), (2, 1, (0, 1, 0), 0, 20), (0, 1, (0, 1, 0), 2, 20), (1, 1, (0, 1, 0), 2, 20)]
+SIMULATOR: Agents  1 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Can directy verify the position of agent  2
+
+SIMULATOR: Event processed:  {'event_id': 'ASSERTION_029', 'agent': 2, 'time': 34, 'details': {'sender': 2, 'agent': 1, 'position': (0, 1, 0), 'confidence': 16, 'timeofposition': 20, 'timeofevent': 29}}
+
+SIMULATOR: Time of the Event:  34
+
+SIMULATOR: confidence_table
+
+defaultdict(<class 'dict'>, {0: {1: 5.407504937458854, 0: 16, 2: 0.5153219645316327}, 1: {0: 0.461900329186254, 1: 16, 2: 0.5153219645316327}, 2: {0: 0.461900329186254, 2: 16, 1: 5.407504937458854}})
+
+SIMULATOR: trust_table
+
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 2}})
+SIMULATOR: globalvars.database
+[(1, 0, (0, 0, 0), 0, 0), (2, 0, (0, 0, 0), 0, 0), (0, 1, (0, 1, 0), 1, 0), (2, 1, (0, 1, 0), 1, 0), (0, 2, (0, 2, 0), 2, 0), (1, 2, (0, 2, 0), 2, 0), (0, 0, (0, 0, 0), 1, 0), (2, 0, (0, 0, 0), 1, 0), (0, 0, (0, 0, 0), 2, 0), (1, 0, (0, 0, 0), 2, 0), (1, 1, (0, 1, 0), 0, 0), (2, 1, (0, 1, 0), 0, 0), (0, 1, (0, 1, 0), 2, 0), (1, 1, (0, 1, 0), 2, 0), (0, 2, (0, 2, 0), 1, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (1, 2, (0, 2, 0), 0, 0), (2, 2, (0, 2, 0), 0, 0), (0, 1, (0, 1, 0), 1, 20), (2, 1, (0, 1, 0), 1, 20), (1, 1, (0, 1, 0), 0, 20), (2, 1, (0, 1, 0), 0, 20), (0, 1, (0, 1, 0), 2, 20), (1, 1, (0, 1, 0), 2, 20)]
+
+SIMULATOR: EVENT QUEUE:
+
+-----------------
+
+===============================================================================
+
+
+
+SIMULATOR: End: confidence_table
+defaultdict(<class 'dict'>, {0: {1: 5.407504937458854, 0: 16, 2: 0.5153219645316327}, 1: {0: 0.461900329186254, 1: 16, 2: 0.5153219645316327}, 2: {0: 0.461900329186254, 2: 16, 1: 5.407504937458854}})
+SIMULATOR: End: trust_table
+defaultdict(<class 'dict'>, {0: {1: 2, 0: 999, 2: 0}, 1: {0: 1, 1: 999, 2: 1}, 2: {0: 0, 2: 999, 1: 2}})
