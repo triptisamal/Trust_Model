@@ -1,0 +1,35 @@
+Test 0: no normalizing, thres 5, simulation stops, +2 with phy validation. ---------------------------------------------final confidence arbitrary high values, >5 (thres)
+Test1: normalizing between 0 and 5, thres 5, simulation never stops, +2 with phy validation.
+Test2: normalizing between 0 and 5, thres 2, simulation never stops, +2 with phy validation.
+Test3: normalizing between 0 and 5, thres 2, simulation never stops, +3.5 with phy validation.
+Test4: normalizing between 0 and 5, thres 2, simulation never stops, +5 with phy validation.
+Test5: normalizing between 0 and 5, thres 2, simulation never stops, +6 with phy validation.
+Test6: normalizing between 0 and 5, thres 2, simulation stops, +10 with phy validation.
+Test7: normalizing between 0 and 5, thres 2, simulation stops, +8,+9 with phy validation. ------------------------------------ final confidence 2 or slightly above 2 (thres) 
+Test8: normalizing between 0 and 5, thres 2, simulation never stops, +7 with phy validation.
+Test9: normalizing between 0 and 5, thres 5, simulation never stops, +5 with phy validation.
+Test10: normalizing between 0 and 5, thres 5, simulation never stops, +11 with phy validation.
+Test11: normalizing between 0 and 5, thres 5, simulation never stops, +16 with phy validation.
+Test12: normalizing between 0 and 5, thres 5, simulation stops, +17 with phy validation.----------------------- final confidence 5 or slightly above 5, value is never below 5 (thres)
+Test13: no normalizing, thres 5, simulation stops, +5 with phy validation. ---------------------------------------------final confidence 5 or below 5, never >5 
+Test14: no normalizing, thres 5, simulation stops, +6 with phy validation. ---------------------------------------------final confidence 6 or below 6, never >6 
+
+
+
+No Normalization
+-------------------
+From Test13, 14: Final convergent value for confidence depends on the score given on physical validation; thres does not matter.
+From Test0: Final convergent value for confidence depends on the thres; score given on physical validation does not matter if the score is less than the thres.
+
+Normalization
+--------------
+From Test7,12: Final convergent value for confidence depends on a combination of the values of thres and physical validation score; the normalization value does not matter.
+
+
+
+
+
+Check: 11 vs 12 check output to see if it is the decay that is causing the instability. Then, that will give information about what the decay rate should be for a mobility (fast or slow).
+
+DONE: If i remove decay, test 11 simulation stops. So decay is the reason for simulation not stopping. I should lower the rate of decay for my formula.
+
