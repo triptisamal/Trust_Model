@@ -28,7 +28,7 @@ def init():
     event_queue = []
     now = 0
     idn = 0
-    e_now = 1
+    e_now = 0.2
     confidence_table = defaultdict(dict)
     trust_table = defaultdict(dict)
     max_reached = 0

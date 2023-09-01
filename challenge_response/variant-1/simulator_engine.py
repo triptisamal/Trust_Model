@@ -42,8 +42,6 @@ def update_assertion(claimant,prover,pos,conf,timeofpos,timeofevent):
  
 def generateChallengeString(k):
 
-    
-
     #Generate k-bit string starting and ending with 1's that act as sentinels
     S = "1"
     for i in range(k-2):
@@ -62,8 +60,6 @@ def create_challenge(claimant,prover,challenger,position,position_time):
     challenge['claimant'] = claimant #made the assertion about prover's position
     challenge['prover'] = prover
     challenge['challenger'] = challenger
-
-
     challenge['tau'] = 3 #seconds (TODO)
     k = random.randint(8, 16)
     challenge['challenge'] = generateChallengeString(k)
@@ -71,22 +67,19 @@ def create_challenge(claimant,prover,challenger,position,position_time):
     challenge['time_of_position'] = position_time
     
     return challenge
-    
+   
 
-def start_timer(claimant,prover,node_id,timeofpos,pos,duration):
-    
-    timer = {'timer_claimant':"DEFAULT",'timer_started_for':"DEFAULT", 'timer_started_by':0, 'prover_pos_time':0,'duration':0}
-    
-    timer['timer_claimant'] = claimant
-    timer['timer_started_for'] = prover
-    timer['timer_started_by'] = node_id
-    timer['prover_pos_time'] = timeofpos
-    timer['position'] = pos
-    timer['duration'] = duration
-    
-    return timer
+def create_response(prover,challenger,claimant,timeofpos,pos,resp):
+    response = {'prover':"DEFAULT", 'challenger':"DEFAULT",'claimant':"DEFAULT",'prover_pos_time':0,'position':(0,0,0),'response':"yes"}
 
+    response['prover'] = prover
+    response['challenger'] = challenger
+    response['claimant'] = claimant
+    response['prover_pos_time'] = timeofpos
+    response['position'] = pos
+    response['response'] = resp
 
+    return response
 
 
 def respond_to_challenge(tau):
@@ -94,7 +87,6 @@ def respond_to_challenge(tau):
 
     #incrementing the current time by the time it should take to perform the challenge-reponse
     #to indicate a successful response
-    globalvars.now += tau
 
     return 1
 
@@ -102,10 +94,13 @@ def respond_to_challenge(tau):
 def node_handler(node_id,action,e,timeofevent):
     
     if action == "UPDATE_DATABASE":
-        print_database(node_id,timeofevent)
+        print_database(timeofevent)
         event_id = "DATABASE_%03d" % (globalvars.idn)
         globalvars.idn += 1
         update = "DB is updated"
+        
+        timeofevent = timeofevent+1
+        print("SIMULATOR: Adding event for reading database at ",timeofevent)
         e = create_event(event_id,node_id,update,timeofevent)
         globalvars.event_queue.append(deepcopy(e))
 
@@ -116,12 +111,12 @@ def node_handler(node_id,action,e,timeofevent):
     if action == "SEND_PERIODIC_ASSERTION":
 
         #node_id is sending position claim
-       # print("Agent ",node_id," is creating the packet for position claim at",globalvars.now, "seconds." )
         assertion = update_assertion(node_id,node_id,globalvars.pos[node_id],globalvars.direct_verification_score,timeofevent,timeofevent)
 
         event_id = "ASSERTION_%03d" % (globalvars.idn)
         globalvars.idn += 1
 
+        print("SIMULATOR: Adding event for agent ",node_id," sending periodic assertion at ",timeofevent)
         e = create_event(event_id,node_id,assertion,timeofevent)
         globalvars.event_queue.append(deepcopy(e))
 
@@ -137,53 +132,40 @@ def node_handler(node_id,action,e,timeofevent):
 
         timeofpos = e['details']['timeofposition']
         globalvars.idn += 1
-        
-
-        e = create_event(event_id,node_id,challenge,globalvars.now)# TODO this is the time challenge was received by the receiver agent
-       # e = create_event(event_id,node_id,challenge,timeofevent)# this is the time challenge was received by the receiver agent
+        print("SIMULATOR: Adding event for agent ",node_id," sending challenge at ",timeofevent)
+        e = create_event(event_id,node_id,challenge,timeofevent)# this is the time challenge was received by the receiver agent
         globalvars.event_queue.append(deepcopy(e))
 
-        #start timer event
-        timer = start_timer(e['details']['claimant'],e['details']['prover'],node_id,timeofpos,e['details']['position'],challenge['tau'])
-        event_id = "TIMERSTART_%03d" % (globalvars.idn)
-        globalvars.idn += 1
-        e = create_event(event_id,node_id,timer,globalvars.now) # TODO this is the time at which timer was started at the sending agent
-        #e = create_event(event_id,node_id,timer,timeofevent) # this is the time at which timer was started at the sending agent
-        globalvars.event_queue.append(deepcopy(e))
-        
-        
         #sort queue according to the simulated real time (time of event happening)
         globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
         
         
     if action == "RESPOND_TO_CHALLENGE":
         #node_id will respond to challenge by turning on/off flashlight
-        #respond_to_challenge(node_id,challenge)
         ret = respond_to_challenge(e['details']['tau'])
 
         if ret == 1:
-            response = "Responding"
+            response = create_response(e['details']['prover'],e['details']['challenger'],e['details']['claimant'],e['details']['time_of_position'],e['details']['position'],"yes")
         
         event_id = "RESPONSE_%03d" % (globalvars.idn)
         globalvars.idn += 1
-        e = create_event(event_id,node_id,response,globalvars.now)#TODO timeofevent is the time at which agent will have successfully performed the challenge
-        #e = create_event(event_id,node_id,response,timeofevent)#timeofevent is the time at which agent will have successfully performed the challenge
+        #node_id is responding to challenge
+        print("SIMULATOR: Adding event for agent ",node_id," responding to a challenge at ",timeofevent)
+        e = create_event(event_id,node_id,response,timeofevent)#timeofevent is the time at which agent will have successfully performed the challenge
         globalvars.event_queue.append(deepcopy(e))
         
         #sort queue according to the simulated real time (time of event happening)
         globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
 
         
-    if action == "TIMER_EXPIRY":
-        #node_id will do actions because of its own timer expiry
-        #it verifies response, then increases/decreases confidence
+    if action == "CONFIDENCE_UPDATE":
+        #node_id verifies response, then increases/decreases confidence
 
-        ret = is_success_response(e['details']['timer_started_for'])
-        conf = update_confidence(ret,e['details']['timer_started_for'],node_id,e['details']['timer_claimant'],e,timeofevent)
+        ret = is_success_response(e['details']['prover'])
 
-        timeofevent = e['time']+e['details']['duration']
-        timeofpos = e['details']['prover_pos_time']
-        
+        print("AGENT ",node_id,": Updating confidence at ",timeofevent)
+        conf = update_confidence(ret,e['details']['prover'],node_id,e['details']['claimant'],e,timeofevent)
+
         
   
 def is_success_response(agent):
@@ -219,10 +201,7 @@ def calc_distance(i,j):
 
     p = np.array([globalvars.pos[i][0],globalvars.pos[i][1],globalvars.pos[i][2]])
     q = np.array([globalvars.pos[j][0],globalvars.pos[j][1],globalvars.pos[j][2]])
- #   print(p)
-  #  print(q)
     d = np.linalg.norm(p-q) 
-   # print(d) 
 
     #convert to feet
     d = d*100
@@ -367,15 +346,14 @@ def update_database(my_id,prover,sender,position,timeofposition,confidence,curre
     c = confidence
     globalvars.database[self_id][prover] = {}
 
-    #globalvars.database[self_id]['prover'] = prover 
     globalvars.database[self_id][prover]['position'] = position 
     globalvars.database[self_id][prover]['sender'] = sender 
     globalvars.database[self_id][prover]['time_of_position'] = timeofposition 
     globalvars.database[self_id][prover]['confidence'] = confidence 
     globalvars.database[self_id][prover]['update_time'] = current_time 
+    
 
-   # tup = (x,y,z,s,t,c)
-    #globalvars.database.append(tup)
+    print_database(current_time)
       
 
 def check_database(my_id,other_agent,assertion_pos):
@@ -387,36 +365,37 @@ def check_database(my_id,other_agent,assertion_pos):
             if key == my_id:
                 for ky, val in globalvars.database[key].items():#otheragent
                     if ky == other_agent:
-                        for k, v in database[key][ky].items():
+                        for k, v in globalvars.database[key][ky].items():
                             if k == 'position' and v == assertion_pos:
                                 return globalvars.database[key][ky]['confidence']
 
     return 0
 
-def print_database(agent_id,event_time):
-    
-    #decay of ALL the confidence values that agent_id has stored
+def print_database(event_time):
+     
+    #decay of ALL the confidence values
+    if not globalvars.database:
+        print("SIMULATOR: Nothing to read in database at ",event_time)
     if globalvars.database:
+        print("SIMULATOR: Reading database at ",event_time)
         for key, value in globalvars.database.items():
             for ky, val in globalvars.database[key].items():
                for k, v in globalvars.database[key][ky].items():
-                    if k == 'update_time' and event_time < globalvars.database[key][ky]['update_time']:#to account for database_update event that happened before challenge response
-                        break
-                    else:
-                        if k == 'confidence':
-                            globalvars.database[key][ky]['confidence'] = globalvars.database[key][ky]['confidence'] - globalvars.delta*(event_time-globalvars.database[key][ky]['update_time'])
-                            globalvars.database[key][ky]['update_time'] = event_time
+                    if k == 'confidence':
+                        globalvars.database[key][ky]['confidence'] = globalvars.database[key][ky]['confidence'] - globalvars.delta*(event_time-globalvars.database[key][ky]['update_time'])
+                        if globalvars.database[key][ky]['confidence'] < 0:
+                            globalvars.database[key][ky]['confidence'] = 0
+                        globalvars.database[key][ky]['update_time'] = event_time
         
-                            #print the database
-                            for i, j in globalvars.database.items():
-                                print("SIMULATOR: Database at time ",event_time," for agent",i,":", j)
-                        else:
-                            continue
+                        ##print the database
+                        #for i, j in globalvars.database.items():
+                        #    print("SIMULATOR: Database at time ",event_time," for agent",i,":", j)
+                    else:
+                        continue
 
 
-    contents = "%s at time %d\n" % (globalvars.database, event_time)
+    contents = "%s at time %f\n" % (globalvars.database, event_time)
     write_to_file("database.txt",contents)
-        #write_to_file("database.txt",globalvars.database)
 
 
 
@@ -425,16 +404,11 @@ def process_event(e):
     #Everytime an event is processed, print the database
     if "DATABASE" in e['event_id']:
         
-        #only add new actions if there are no more ASSERTION events
-        ret = 0
-        ret = check_event_queue()
         ret = 1
         if ret:
             #generate another database update
            #set granularity
-           # timeofevent = e['time']+1
-            timeofevent = e['time']+2
-            print("e['time']=",e['time'])
+            timeofevent = e['time']
             #Trigger database refresh for all agents
             #for i in range(globalvars.number_of_nodes):
             node_handler(0,"UPDATE_DATABASE",e,timeofevent)
@@ -443,8 +417,6 @@ def process_event(e):
 
     if "ASSERTION" in e['event_id']:
         #send challenge for each position claim from each agent that received the claim
-        #increment simulation time
-        globalvars.now += globalvars.e_now 
 
         for i in range(globalvars.number_of_nodes): #everyone received because wireless communication is infinite
             if e['agent'] != i:#e['agent'] is making the assertion
@@ -470,8 +442,6 @@ def process_event(e):
                     
 
     if "CHALLENGE" in e['event_id']:
-        #turn on flashlight for all the agents who got the challenge
-        globalvars.now += globalvars.e_now
 
         print("SIMULATOR: Event:",e)
         timeofevent = e['time']+ e['details']['tau']  
@@ -480,54 +450,12 @@ def process_event(e):
                 node_handler(i,"RESPOND_TO_CHALLENGE",e,timeofevent)
                 
                 
-    if "TIMERSTART" in e['event_id']:
-        #create a timer expiry event for every timerstart event
+    if "RESPONSE" in e['event_id']:
+        
         print("SIMULATOR: Event:",e)
-        timeofevent = e['time']+ e['details']['duration'] 
-        node_handler(e['details']['timer_started_by'],"TIMER_EXPIRY",e,timeofevent)
+        timeofevent = e['time']+globalvars.e_now #time of response = time of confidence update = time of response + e_now (a smal time period after the response accounted for update time) 
+        node_handler(e['details']['challenger'],"CONFIDENCE_UPDATE",e,timeofevent)
     
-
-
-
-#def make_database(): 
-#
-#    tup = (999999,9999,9999,999,999)
-#
-#    for i in range(globalvars.number_of_nodes)
-#    globalvars.database.append(tup)
-#    print(globalvars.database)
-
-
-
-def make_confidence_table(current_time): 
-    from collections import defaultdict
-    from itertools import permutations 
-   # confidence_table = defaultdict(dict)
-    
-    if current_time == 0:
-        for (my_id, other) in permutations(range(globalvars.number_of_nodes), 2):
-            globalvars.confidence_table[my_id][other] = 0
-            globalvars.confidence_table[my_id][my_id] = globalvars.direct_verification_score
-    else:
-        for (my_id, other) in permutations(range(globalvars.number_of_nodes), 2):
-            globalvars.confidence_table[my_id][other] = (globalvars.confidence_table[my_id][other])-globalvars.delta*(current_time)
-            globalvars.confidence_table[my_id][my_id] = globalvars.direct_verification_score
-
-
-def make_trust_table(): 
-    from collections import defaultdict
-    from itertools import permutations 
-   # confidence_table = defaultdict(dict)
-
-    for (my_id, other) in permutations(range(globalvars.number_of_nodes), 2):
-        globalvars.trust_table[my_id][other] = 0
-        globalvars.trust_table[my_id][my_id] = 999
-
-
-def extract_confidence_from_database(agent_id):
-
-    print("Confidence table (Agent ID: Confidence) for agent ", agent_id)
-    #print(globalvars.confidence_table[agent_id])
 
 
 def read_file(pos_file):
@@ -564,9 +492,6 @@ def main():
  #   globalvars.direct_verification_score = int(sys.argv[5])
 
 
-   # print("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    #print("\nSIMULATOR ENGINE")
-    #print("===========================")
     print("SIMULATOR: Number of agents = ", globalvars.number_of_nodes)
 
     #create agent positions
@@ -574,21 +499,14 @@ def main():
     globalvars.pos = eval(read_file(filename))
     print("SIMULATOR: position of all agents: ",globalvars.pos)
     
-    #create confidence table
-    #TODO remove this part of code and add to 5-tuple
-    #make_confidence_table(0)
-
-
-    #make_database()
-    #make_trust_table()
     
     #add first event(s) to the event_queue
     e = {'event_id':"DEFAULT", 'agent':0,'time':0}
     for i in range(globalvars.number_of_nodes):
         node_handler(i,"SEND_PERIODIC_ASSERTION",e,0);
+        node_handler(i,"SEND_PERIODIC_ASSERTION",e,globalvars.refresh_period);
+        node_handler(i,"SEND_PERIODIC_ASSERTION",e,2*globalvars.refresh_period);
     node_handler(0,"UPDATE_DATABASE",e,0);
-        #node_handler(i,"SEND_PERIODIC_ASSERTION",e,globalvars.refresh_period);
-        #node_handler(i,"SEND_PERIODIC_ASSERTION",e,2*globalvars.refresh_period);
 
         
     print("SIMULATOR: Initial events:")
@@ -612,12 +530,7 @@ def main():
 
 
 
-    #print("SIMULATOR: End: confidence_table")
-    #print(globalvars.confidence_table)
-    #print("SIMULATOR: End: trust_table")
-    #print(globalvars.trust_table)
-    print("SIMULATOR: End: database")
-    print(globalvars.database)
+    print("SIMULATOR: End: database:",globalvars.database)
 
 
 
