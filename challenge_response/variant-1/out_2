@@ -44,7 +44,7 @@ SIMULATOR: Time of the Event:  0
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_013', 'agent': 1, 'time': 0.00801016703362164, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '11111111', 'position': (0, 0, 0), 'time_of_position': 0, 'claimant': 0, 'tau': 3}}
+{'event_id': 'CHALLENGE_013', 'agent': 1, 'time': 0.00801016703362164, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10101000101', 'position': (0, 0, 0), 'time_of_position': 0, 'claimant': 0, 'tau': 3}}
 {'event_id': 'DATABASE_012', 'agent': 0, 'time': 1, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_001', 'agent': 1, 'time': 15, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 15, 'timeofevent': 15}}
 {'event_id': 'ASSERTION_002', 'agent': 2, 'time': 30, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 30, 'timeofevent': 30}}
@@ -61,10 +61,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_013', 'agent': 1, 'time': 0.00801016703362164, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '11111111', 'position': (0, 0, 0), 'time_of_position': 0, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_013', 'agent': 1, 'time': 0.00801016703362164, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10101000101', 'position': (0, 0, 0), 'time_of_position': 0, 'claimant': 0, 'tau': 3}}
 SIMULATOR: Adding event for agent  0  responding to a challenge at  3.0080101670336217
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_013', 'agent': 1, 'time': 0.00801016703362164, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '11111111', 'position': (0, 0, 0), 'time_of_position': 0, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_013', 'agent': 1, 'time': 0.00801016703362164, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10101000101', 'position': (0, 0, 0), 'time_of_position': 0, 'claimant': 0, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  0.00801016703362164
 
@@ -499,8 +499,8 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_028', 'agent': 0, 'time': 15, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '100011101010001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '11111001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '10100111', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '101000110101', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
 {'event_id': 'ASSERTION_002', 'agent': 2, 'time': 30, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 30, 'timeofevent': 30}}
 {'event_id': 'ASSERTION_003', 'agent': 0, 'time': 45, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 45, 'timeofevent': 45}}
 {'event_id': 'ASSERTION_004', 'agent': 1, 'time': 60, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 60, 'timeofevent': 60}}
@@ -525,8 +525,8 @@ SIMULATOR: Time of the Event:  15
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '100011101010001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '11111001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '10100111', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '101000110101', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_031', 'agent': 0, 'time': 16, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_002', 'agent': 2, 'time': 30, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 30, 'timeofevent': 30}}
 {'event_id': 'ASSERTION_003', 'agent': 0, 'time': 45, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 45, 'timeofevent': 45}}
@@ -542,17 +542,17 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '100011101010001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '10100111', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  18.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '100011101010001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_029', 'agent': 0, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '10100111', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  15.008010167033621
 
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '11111001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '101000110101', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_031', 'agent': 0, 'time': 16, 'details': 'DB is updated'}
 {'event_id': 'RESPONSE_032', 'agent': 1, 'time': 18.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'claimant': 1, 'prover_pos_time': 15, 'position': (0, 1, 0), 'response': 'yes'}}
 {'event_id': 'ASSERTION_002', 'agent': 2, 'time': 30, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 30, 'timeofevent': 30}}
@@ -569,10 +569,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '11111001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '101000110101', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  18.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '11111001', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_030', 'agent': 2, 'time': 15.008010167033621, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '101000110101', 'position': (0, 1, 0), 'time_of_position': 15, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  15.008010167033621
 
@@ -1022,7 +1022,7 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_047', 'agent': 0, 'time': 30, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100001001', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11000111', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
 {'event_id': 'ASSERTION_003', 'agent': 0, 'time': 45, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 45, 'timeofevent': 45}}
 {'event_id': 'ASSERTION_004', 'agent': 1, 'time': 60, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 60, 'timeofevent': 60}}
 {'event_id': 'ASSERTION_005', 'agent': 2, 'time': 75, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
@@ -1046,7 +1046,7 @@ SIMULATOR: Time of the Event:  30
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100001001', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11000111', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
 {'event_id': 'DATABASE_049', 'agent': 0, 'time': 31, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_003', 'agent': 0, 'time': 45, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 45, 'timeofevent': 45}}
 {'event_id': 'ASSERTION_004', 'agent': 1, 'time': 60, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 60, 'timeofevent': 60}}
@@ -1061,10 +1061,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100001001', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11000111', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
 SIMULATOR: Adding event for agent  2  responding to a challenge at  33.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100001001', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_048', 'agent': 1, 'time': 30.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11000111', 'position': (0, 2, 0), 'time_of_position': 30, 'claimant': 2, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  30.00801016703362
 
@@ -1465,7 +1465,7 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_064', 'agent': 0, 'time': 45, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '11010100101', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
+{'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10100010111', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
 {'event_id': 'ASSERTION_004', 'agent': 1, 'time': 60, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 60, 'timeofevent': 60}}
 {'event_id': 'ASSERTION_005', 'agent': 2, 'time': 75, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
 {'event_id': 'ASSERTION_006', 'agent': 0, 'time': 90, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 90, 'timeofevent': 90}}
@@ -1488,7 +1488,7 @@ SIMULATOR: Time of the Event:  45
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '11010100101', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
+{'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10100010111', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
 {'event_id': 'DATABASE_066', 'agent': 0, 'time': 46, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_004', 'agent': 1, 'time': 60, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 60, 'timeofevent': 60}}
 {'event_id': 'ASSERTION_005', 'agent': 2, 'time': 75, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
@@ -1502,10 +1502,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '11010100101', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10100010111', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
 SIMULATOR: Adding event for agent  0  responding to a challenge at  48.008010167033625
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '11010100101', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_065', 'agent': 1, 'time': 45.008010167033625, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10100010111', 'position': (0, 0, 0), 'time_of_position': 45, 'claimant': 0, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  45.008010167033625
 
@@ -1892,8 +1892,8 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_081', 'agent': 0, 'time': 60, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '1011011001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '10000100001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111100101010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1000010010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
 {'event_id': 'ASSERTION_005', 'agent': 2, 'time': 75, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
 {'event_id': 'ASSERTION_006', 'agent': 0, 'time': 90, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 90, 'timeofevent': 90}}
 {'event_id': 'ASSERTION_007', 'agent': 1, 'time': 105, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 105, 'timeofevent': 105}}
@@ -1915,8 +1915,8 @@ SIMULATOR: Time of the Event:  60
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '1011011001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '10000100001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111100101010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1000010010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_084', 'agent': 0, 'time': 61, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_005', 'agent': 2, 'time': 75, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
 {'event_id': 'ASSERTION_006', 'agent': 0, 'time': 90, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 90, 'timeofevent': 90}}
@@ -1929,17 +1929,17 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '1011011001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111100101010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  63.008010167033625
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '1011011001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_082', 'agent': 0, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111100101010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  60.008010167033625
 
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '10000100001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1000010010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_084', 'agent': 0, 'time': 61, 'details': 'DB is updated'}
 {'event_id': 'RESPONSE_085', 'agent': 1, 'time': 63.008010167033625, 'details': {'prover': 1, 'challenger': 0, 'claimant': 1, 'prover_pos_time': 60, 'position': (0, 1, 0), 'response': 'yes'}}
 {'event_id': 'ASSERTION_005', 'agent': 2, 'time': 75, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
@@ -1953,10 +1953,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '10000100001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1000010010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  63.008010167033625
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '10000100001', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_083', 'agent': 2, 'time': 60.008010167033625, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1000010010101', 'position': (0, 1, 0), 'time_of_position': 60, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  60.008010167033625
 
@@ -2355,7 +2355,7 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_100', 'agent': 0, 'time': 75, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100010101001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1001101010001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
 {'event_id': 'ASSERTION_006', 'agent': 0, 'time': 90, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 90, 'timeofevent': 90}}
 {'event_id': 'ASSERTION_007', 'agent': 1, 'time': 105, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 105, 'timeofevent': 105}}
 {'event_id': 'ASSERTION_008', 'agent': 2, 'time': 120, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
@@ -2376,7 +2376,7 @@ SIMULATOR: Time of the Event:  75
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100010101001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1001101010001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
 {'event_id': 'DATABASE_102', 'agent': 0, 'time': 76, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_006', 'agent': 0, 'time': 90, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 90, 'timeofevent': 90}}
 {'event_id': 'ASSERTION_007', 'agent': 1, 'time': 105, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 105, 'timeofevent': 105}}
@@ -2388,10 +2388,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100010101001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1001101010001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
 SIMULATOR: Adding event for agent  2  responding to a challenge at  78.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '100010101001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_101', 'agent': 1, 'time': 75.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '1001101010001', 'position': (0, 2, 0), 'time_of_position': 75, 'claimant': 2, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  75.00801016703362
 
@@ -2744,7 +2744,7 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_117', 'agent': 0, 'time': 90, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1010111101001101', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
+{'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1111100110010001', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
 {'event_id': 'ASSERTION_007', 'agent': 1, 'time': 105, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 105, 'timeofevent': 105}}
 {'event_id': 'ASSERTION_008', 'agent': 2, 'time': 120, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
 {'event_id': 'ASSERTION_009', 'agent': 0, 'time': 135, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 135, 'timeofevent': 135}}
@@ -2764,7 +2764,7 @@ SIMULATOR: Time of the Event:  90
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1010111101001101', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
+{'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1111100110010001', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
 {'event_id': 'DATABASE_119', 'agent': 0, 'time': 91, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_007', 'agent': 1, 'time': 105, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 105, 'timeofevent': 105}}
 {'event_id': 'ASSERTION_008', 'agent': 2, 'time': 120, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
@@ -2775,10 +2775,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1010111101001101', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1111100110010001', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
 SIMULATOR: Adding event for agent  0  responding to a challenge at  93.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1010111101001101', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_118', 'agent': 1, 'time': 90.00801016703362, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1111100110010001', 'position': (0, 0, 0), 'time_of_position': 90, 'claimant': 0, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  90.00801016703362
 
@@ -3117,8 +3117,8 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_134', 'agent': 0, 'time': 105, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111110111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110101111111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111010010111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1110101111110001', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
 {'event_id': 'ASSERTION_008', 'agent': 2, 'time': 120, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
 {'event_id': 'ASSERTION_009', 'agent': 0, 'time': 135, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 135, 'timeofevent': 135}}
 {'event_id': 'ASSERTION_010', 'agent': 1, 'time': 150, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 150, 'timeofevent': 150}}
@@ -3137,8 +3137,8 @@ SIMULATOR: Time of the Event:  105
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111110111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110101111111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111010010111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1110101111110001', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_137', 'agent': 0, 'time': 106, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_008', 'agent': 2, 'time': 120, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
 {'event_id': 'ASSERTION_009', 'agent': 0, 'time': 135, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 135, 'timeofevent': 135}}
@@ -3148,17 +3148,17 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111110111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111010010111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  108.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '111110111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_135', 'agent': 0, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111010010111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  105.00801016703362
 
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110101111111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1110101111110001', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_137', 'agent': 0, 'time': 106, 'details': 'DB is updated'}
 {'event_id': 'RESPONSE_138', 'agent': 1, 'time': 108.00801016703362, 'details': {'prover': 1, 'challenger': 0, 'claimant': 1, 'prover_pos_time': 105, 'position': (0, 1, 0), 'response': 'yes'}}
 {'event_id': 'ASSERTION_008', 'agent': 2, 'time': 120, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
@@ -3169,10 +3169,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110101111111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1110101111110001', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  108.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110101111111', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_136', 'agent': 2, 'time': 105.00801016703362, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1110101111110001', 'position': (0, 1, 0), 'time_of_position': 105, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  105.00801016703362
 
@@ -3520,7 +3520,7 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_153', 'agent': 0, 'time': 120, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101110001111111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '111010111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
 {'event_id': 'ASSERTION_009', 'agent': 0, 'time': 135, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 135, 'timeofevent': 135}}
 {'event_id': 'ASSERTION_010', 'agent': 1, 'time': 150, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 150, 'timeofevent': 150}}
 {'event_id': 'ASSERTION_011', 'agent': 2, 'time': 165, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
@@ -3538,7 +3538,7 @@ SIMULATOR: Time of the Event:  120
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101110001111111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '111010111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
 {'event_id': 'DATABASE_155', 'agent': 0, 'time': 121, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_009', 'agent': 0, 'time': 135, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 135, 'timeofevent': 135}}
 {'event_id': 'ASSERTION_010', 'agent': 1, 'time': 150, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 150, 'timeofevent': 150}}
@@ -3547,10 +3547,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101110001111111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '111010111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
 SIMULATOR: Adding event for agent  2  responding to a challenge at  123.00801016703362
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101110001111111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_154', 'agent': 1, 'time': 120.00801016703362, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '111010111', 'position': (0, 2, 0), 'time_of_position': 120, 'claimant': 2, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  120.00801016703362
 
@@ -3855,7 +3855,7 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_170', 'agent': 0, 'time': 135, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10010000001', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
+{'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1100011010110101', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
 {'event_id': 'ASSERTION_010', 'agent': 1, 'time': 150, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 150, 'timeofevent': 150}}
 {'event_id': 'ASSERTION_011', 'agent': 2, 'time': 165, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
 ===============================================================================
@@ -3872,7 +3872,7 @@ SIMULATOR: Time of the Event:  135
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10010000001', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
+{'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1100011010110101', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
 {'event_id': 'DATABASE_172', 'agent': 0, 'time': 136, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_010', 'agent': 1, 'time': 150, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 150, 'timeofevent': 150}}
 {'event_id': 'ASSERTION_011', 'agent': 2, 'time': 165, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
@@ -3880,10 +3880,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10010000001', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1100011010110101', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
 SIMULATOR: Adding event for agent  0  responding to a challenge at  138.00801016703363
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '10010000001', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_171', 'agent': 1, 'time': 135.00801016703363, 'details': {'prover': 0, 'challenger': 1, 'time': 0, 'challenge': '1100011010110101', 'position': (0, 0, 0), 'time_of_position': 135, 'claimant': 0, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  135.00801016703363
 
@@ -4174,8 +4174,8 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_187', 'agent': 0, 'time': 150, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111100101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '100101101001', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '101110101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110111', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
 {'event_id': 'ASSERTION_011', 'agent': 2, 'time': 165, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
 ===============================================================================
 
@@ -4191,25 +4191,25 @@ SIMULATOR: Time of the Event:  150
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111100101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
-{'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '100101101001', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '101110101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110111', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_190', 'agent': 0, 'time': 151, 'details': 'DB is updated'}
 {'event_id': 'ASSERTION_011', 'agent': 2, 'time': 165, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
 ===============================================================================
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111100101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '101110101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  153.00801016703363
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '11111100101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_188', 'agent': 0, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'time': 0, 'challenge': '101110101', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  150.00801016703363
 
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '100101101001', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+{'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110111', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
 {'event_id': 'DATABASE_190', 'agent': 0, 'time': 151, 'details': 'DB is updated'}
 {'event_id': 'RESPONSE_191', 'agent': 1, 'time': 153.00801016703363, 'details': {'prover': 1, 'challenger': 0, 'claimant': 1, 'prover_pos_time': 150, 'position': (0, 1, 0), 'response': 'yes'}}
 {'event_id': 'ASSERTION_011', 'agent': 2, 'time': 165, 'details': {'sender': 2, 'agent': 2, 'position': (0, 2, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
@@ -4217,10 +4217,10 @@ SIMULATOR: EVENT QUEUE:
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '100101101001', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110111', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
 SIMULATOR: Adding event for agent  1  responding to a challenge at  153.00801016703363
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '100101101001', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_189', 'agent': 2, 'time': 150.00801016703363, 'details': {'prover': 1, 'challenger': 2, 'time': 0, 'challenge': '1011110111', 'position': (0, 1, 0), 'time_of_position': 150, 'claimant': 1, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  150.00801016703363
 
@@ -4517,7 +4517,7 @@ SIMULATOR: EVENT QUEUE:
 
 -----------------
 {'event_id': 'DATABASE_206', 'agent': 0, 'time': 165, 'details': 'DB is updated'}
-{'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101111101', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11011101011', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
 ===============================================================================
 
 
@@ -4532,16 +4532,16 @@ SIMULATOR: Time of the Event:  165
 SIMULATOR: EVENT QUEUE:
 
 -----------------
-{'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101111101', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
+{'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11011101011', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
 {'event_id': 'DATABASE_208', 'agent': 0, 'time': 166, 'details': 'DB is updated'}
 ===============================================================================
 
 
 
-SIMULATOR: Event: {'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101111101', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event: {'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11011101011', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
 SIMULATOR: Adding event for agent  2  responding to a challenge at  168.00801016703363
 
-SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '101111101', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
+SIMULATOR: Event processed:  {'event_id': 'CHALLENGE_207', 'agent': 1, 'time': 165.00801016703363, 'details': {'prover': 2, 'challenger': 1, 'time': 0, 'challenge': '11011101011', 'position': (0, 2, 0), 'time_of_position': 165, 'claimant': 2, 'tau': 3}}
 
 SIMULATOR: Time of the Event:  165.00801016703363
 

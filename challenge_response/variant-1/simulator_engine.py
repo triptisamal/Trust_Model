@@ -427,7 +427,7 @@ def print_database(event_time):
 def print_to_excel():
     import pandas as pd
     
-    array = [globalvars.arr01,globalvars.time01,globalvars.arr02,globalvars.time02,globalvars.arr10,globalvars.time10,globalvars.arr12,globalvars.time12,globalvars.arr21,globalvars.time21,globalvars.arr20,globalvars.time20]
+    array = [globalvars.time01,globalvars.arr01,globalvars.time02,globalvars.arr02,globalvars.time10,globalvars.arr10,globalvars.time12,globalvars.arr12,globalvars.time21,globalvars.arr21,globalvars.time20,globalvars.arr20]
 
     df = pd.DataFrame(array).T
     #df = DataFrame({'0\'s Confidence for 1': globalvars.arr01, '0\'s Confidence for 2': globalvars.arr02, '1\'s Confidence for 0': globalvars.arr10, '1\'s Confidence for 2': globalvars.arr12, '2\'s Confidence for 1': globalvars.arr21, '2\'s Confidence for 0': globalvars.arr20})
