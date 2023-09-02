@@ -21,6 +21,19 @@ def init():
     global direct_verification_score
     global cf_min
     global alpha
+    global arr01 #0 database for 1
+    global arr12 #1 database for 2 
+    global arr20 #2 database for 0
+    global arr21 #2 database for 1
+    global arr10 #1 database for 0
+    global arr02 #0 database for 2
+    global time01 #0 database for 1
+    global time12 #1 database for 2 
+    global time20 #2 database for 0
+    global time21 #2 database for 1
+    global time10 #1 database for 0
+    global time02 #0 database for 2
+    
 
     number_of_nodes = 0
     pos = []
@@ -40,4 +53,17 @@ def init():
     direct_verification_score = 20
     cf_min = 5
     alpha = 1 #trust score
+    arr01 = ['01'] #0 database for 1
+    arr12 = ['12'] #1 database for 2 
+    arr20 = ['20'] #2 database for 0
+    arr21 = ['21'] #2 database for 1
+    arr10 = ['10'] #1 database for 0
+    arr02 = ['02'] #0 database for 2
+    time01 = ['t01'] #0 database for 1
+    time12 = ['t12'] #1 database for 2 
+    time20 = ['t20'] #2 database for 0
+    time21 = ['t21'] #2 database for 1
+    time10 = ['t10'] #1 database for 0
+    time02 = ['t02'] #0 database for 2
+
 

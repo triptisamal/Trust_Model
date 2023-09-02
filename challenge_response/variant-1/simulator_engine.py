@@ -100,12 +100,14 @@ def node_handler(node_id,action,e,timeofevent):
         update = "DB is updated"
         
         timeofevent = timeofevent+1
-        print("SIMULATOR: Adding event for reading database at ",timeofevent)
-        e = create_event(event_id,node_id,update,timeofevent)
-        globalvars.event_queue.append(deepcopy(e))
 
-        #sort queue according to the simulated real time (time of event happening)
-        globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
+        if globalvars.now < 1000:
+            print("SIMULATOR: Adding event for reading database at ",timeofevent)
+            e = create_event(event_id,node_id,update,timeofevent)
+            globalvars.event_queue.append(deepcopy(e))
+
+            #sort queue according to the simulated real time (time of event happening)
+            globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
 
 
     if action == "SEND_PERIODIC_ASSERTION":
@@ -386,16 +388,51 @@ def print_database(event_time):
                         if globalvars.database[key][ky]['confidence'] < 0:
                             globalvars.database[key][ky]['confidence'] = 0
                         globalvars.database[key][ky]['update_time'] = event_time
-        
                         ##print the database
                         #for i, j in globalvars.database.items():
                         #    print("SIMULATOR: Database at time ",event_time," for agent",i,":", j)
                     else:
                         continue
+        
+
+        #print to excel sheet
+        for key, value in globalvars.database.items():
+            for ky, val in globalvars.database[key].items():
+               for k, v in globalvars.database[key][ky].items():
+                   if key == 0 and ky == 1:
+                       globalvars.arr01.append(globalvars.database[key][ky]['confidence'])
+                       globalvars.time01.append(globalvars.database[key][ky]['update_time'])
+                   if key == 0 and ky == 2:
+                       globalvars.arr02.append(globalvars.database[key][ky]['confidence'])
+                       globalvars.time02.append(globalvars.database[key][ky]['update_time'])
+                   if key == 1 and ky == 2:
+                       globalvars.arr12.append(globalvars.database[key][ky]['confidence'])
+                       globalvars.time12.append(globalvars.database[key][ky]['update_time'])
+                   if key == 1 and ky == 0:
+                       globalvars.arr10.append(globalvars.database[key][ky]['confidence'])
+                       globalvars.time10.append(globalvars.database[key][ky]['update_time'])
+                   if key == 2 and ky == 1:
+                       globalvars.arr21.append(globalvars.database[key][ky]['confidence'])
+                       globalvars.time21.append(globalvars.database[key][ky]['update_time'])
+                   if key == 2 and ky == 0:
+                       globalvars.arr20.append(globalvars.database[key][ky]['confidence'])
+                       globalvars.time20.append(globalvars.database[key][ky]['update_time'])
 
 
     contents = "%s at time %f\n" % (globalvars.database, event_time)
     write_to_file("database.txt",contents)
+
+
+
+def print_to_excel():
+    import pandas as pd
+    
+    array = [globalvars.arr01,globalvars.time01,globalvars.arr02,globalvars.time02,globalvars.arr10,globalvars.time10,globalvars.arr12,globalvars.time12,globalvars.arr21,globalvars.time21,globalvars.arr20,globalvars.time20]
+
+    df = pd.DataFrame(array).T
+    #df = DataFrame({'0\'s Confidence for 1': globalvars.arr01, '0\'s Confidence for 2': globalvars.arr02, '1\'s Confidence for 0': globalvars.arr10, '1\'s Confidence for 2': globalvars.arr12, '2\'s Confidence for 1': globalvars.arr21, '2\'s Confidence for 0': globalvars.arr20})
+    #df.to_excel('confidence_plots.xlsx', sheet_name='sheet1', index=False)
+    df.to_excel(excel_writer = "./confidence_plots.xlsx")
 
 
 
@@ -499,13 +536,13 @@ def main():
     globalvars.pos = eval(read_file(filename))
     print("SIMULATOR: position of all agents: ",globalvars.pos)
     
-    
     #add first event(s) to the event_queue
     e = {'event_id':"DEFAULT", 'agent':0,'time':0}
-    for i in range(globalvars.number_of_nodes):
-        node_handler(i,"SEND_PERIODIC_ASSERTION",e,0);
-        node_handler(i,"SEND_PERIODIC_ASSERTION",e,globalvars.refresh_period);
-        node_handler(i,"SEND_PERIODIC_ASSERTION",e,2*globalvars.refresh_period);
+    ctr = 0
+    while ctr < 10:
+        for i in range(globalvars.number_of_nodes):
+            node_handler(i,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period);
+            ctr = ctr + 1
     node_handler(0,"UPDATE_DATABASE",e,0);
 
         
@@ -522,13 +559,16 @@ def main():
 
         print("\nSIMULATOR: Event processed: ",item)
         print("\nSIMULATOR: Time of the Event: ",item['time'])
+        globalvars.now = item['time']
 
         print("\nSIMULATOR: EVENT QUEUE:\n")
         print("-----------------")
         print(*globalvars.event_queue,sep="\n")
         print("===============================================================================\n\n\n")
 
+    
 
+    print_to_excel()
 
     print("SIMULATOR: End: database:",globalvars.database)
 
