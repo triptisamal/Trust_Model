@@ -101,7 +101,7 @@ def node_handler(node_id,action,e,timeofevent):
         
         timeofevent = timeofevent+1
 
-        if globalvars.now < 1000:
+        if globalvars.now < 200:
             print("SIMULATOR: Adding event for reading database at ",timeofevent)
             e = create_event(event_id,node_id,update,timeofevent)
             globalvars.event_queue.append(deepcopy(e))
