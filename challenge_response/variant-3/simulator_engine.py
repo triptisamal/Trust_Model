@@ -361,6 +361,7 @@ def update_database(my_id,prover,sender,position,timeofposition,confidence,curre
         globalvars.trust_table[self_id][prover] = confidence
     else:
         globalvars.trust_table[self_id][prover] = globalvars.trust_table[self_id][prover]*confidence
+        globalvars.trust_table[self_id][prover] = (globalvars.trust_table[self_id][prover]-0)/(globalvars.direct_verification_score-0)
      
 
 def initialize_trust():
