@@ -3,6 +3,7 @@ from copy import deepcopy
 import sys
 import random
 from itertools import permutations
+import threading
 
 from network_create import *
 import globalvars
@@ -128,7 +129,8 @@ def print_database(event_time):
 
 
     contents = "%s at time %f\n" % (globalvars.database, event_time)
-    write_to_file("database.txt",contents)
+    dbfile = "database_%d.txt" % (globalvars.testcase)
+    write_to_file(dbfile,contents)
 
 
 def print_to_excel():
@@ -137,7 +139,10 @@ def print_to_excel():
     array = [globalvars.time01,globalvars.arr01,globalvars.time02,globalvars.arr02,globalvars.time10,globalvars.arr10,globalvars.time12,globalvars.arr12,globalvars.time21,globalvars.arr21,globalvars.time20,globalvars.arr20]
 
     df = pd.DataFrame(array).T
-    df.to_excel(excel_writer = "./confidence_plots.xlsx")
+
+    filepath = "./confidence_plots-%d.xlsx" % (globalvars.testcase)
+    df.to_excel(excel_writer = filepath)
+    #df.to_excel(excel_writer = "./confidence_plots.xlsx")
 
 
 
@@ -613,6 +618,17 @@ def node_handler(node_id,action,e,timeofevent):
                 globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
 
 
+def change_position():
+    while 1:
+        if globalvars.now >= 20:
+            #change agent positions
+            filename = "pos_change_%d.txt" % (globalvars.testcase)
+            globalvars.pos = eval(read_file(filename))
+            print("SIMULATOR: position of all agents: ",globalvars.pos)
+            return
+
+    
+
 def main():
     '''Simulation engine'''
     
@@ -623,12 +639,12 @@ def main():
     
     globalvars.init()
     globalvars.number_of_nodes = int(sys.argv[1])
-    testcase = int(sys.argv[2])
+    globalvars.testcase = int(sys.argv[2])
 
     print("SIMULATOR: Number of agents = ", globalvars.number_of_nodes)
 
     #create agent positions
-    filename = "pos_%d.txt" % (testcase)
+    filename = "pos_%d.txt" % (globalvars.testcase)
     globalvars.pos = eval(read_file(filename))
     print("SIMULATOR: position of all agents: ",globalvars.pos)
    
@@ -636,8 +652,15 @@ def main():
     initialize_trust_database()
     #add first event(s) to the event_queue
     e = {'event_id':"DEFAULT", 'agent':0,'time':0}
+
+
+    if globalvars.testcase == 7 or globalvars.testcase == 8:
+        #For agent motion
+        x = threading.Thread(target=change_position,daemon=True)
+        x.start()
+
     ctr = 0
-    while ctr < 10:
+    while ctr < 20:
         for i in range(globalvars.number_of_nodes):
             node_handler(i,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period)
             ctr = ctr + 1
