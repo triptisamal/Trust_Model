@@ -11,7 +11,6 @@ def init():
     global idn
     global e_now
     global trust_table
-    global max_reached
     global speed
     global database
     global flag
@@ -19,7 +18,7 @@ def init():
     global refresh_period
     global direct_verification_score
     global cf_min
-    global alpha
+    global testcase
     global arr01 #0 database for 1
     global arr12 #1 database for 2 
     global arr20 #2 database for 0
@@ -42,7 +41,6 @@ def init():
     idn = 0
     e_now = 0.2
     trust_table = defaultdict(dict)
-    max_reached = 0
     speed = 299792458 #m / s
     database = defaultdict(dict)
     flag = 0
@@ -50,7 +48,7 @@ def init():
     refresh_period = 15
     direct_verification_score = 20
     cf_min = 5
-    alpha = 1 #trust score
+    testcase = 1
     arr01 = ['01'] #0 database for 1
     arr12 = ['12'] #1 database for 2 
     arr20 = ['20'] #2 database for 0
