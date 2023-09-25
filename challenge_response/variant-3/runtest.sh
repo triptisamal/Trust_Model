@@ -11,7 +11,9 @@ echo "5. 3 agents in at corner of a triangle, two V(d) > 0, one V(d) < 0"
 echo "6. 3 agents in at corner of a triangle, one V(d) > 0, two V(d) < 0"
 echo "7. 3 agents, 1 agent moving such that it can not be verified by another agent that was able to verify the agent at its previous location."
 echo "8. 3 agents, 1 agent moving such that the moving agent can be verified by another agent that was able to verify the agent at its previous location and another agent can be verified by some agent that was not able to verify the agent previously"
-echo "9. All"
+echo "9. All: from 0 to 8"
+echo "10. 12 agents, one moving"
+
 
 read testnumber
 
@@ -27,6 +29,11 @@ if [ "$testnumber" -eq "2" ] || [ "$testnumber" -eq "3" ] || [ "$testnumber" -eq
 
 then
 	python3 simulator_engine.py 3 $testnumber >out_$testnumber
+fi
+
+if [ "$testnumber" -eq "10" ]
+then
+	python3 simulator_engine.py 12 $testnumber >out_$testnumber
 fi
 
 if [ "$testnumber" -eq "9" ]
