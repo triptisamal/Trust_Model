@@ -13,6 +13,7 @@ def init():
     global trust_table
     global speed
     global database
+    global assertion
     global flag
     global delta
     global refresh_period
@@ -43,6 +44,7 @@ def init():
     trust_table = defaultdict(dict)
     speed = 299792458 #m / s
     database = defaultdict(dict)
+    assertion = []
     flag = 0
     delta = 1
     refresh_period = 15

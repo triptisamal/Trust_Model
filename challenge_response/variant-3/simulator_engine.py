@@ -35,16 +35,23 @@ def initialize_trust_database():
         globalvars.trust_table[self_id][other] = 0
 
 
-def update_database(my_id,other_id,sender,position,timeofposition,confidence,current_time):
+def update_assertiondatabase(self_id,other_id,sender,position,timeofposition,confidence,current_time):
 
-    #tup = (x, y, z, s, t, c) x = agent whose database this is, y = agent whose position is in database, z = position of y, s= sender of assertion, t = time of position,
+    tup = {}
+    tup['my_id'] = self_id
+    tup['other_id'] = other_id
+    tup['position'] = position
+    tup['sender'] = sender
+    tup['time_of_position'] = timeofposition
+
+    globalvars.assertion.append(tup)
+
+
+def update_confdatabase(my_id,other_id,sender,position,timeofposition,confidence,current_time):
+
+    #tup = (self_id, other_id, position, sender, timeofposition, conffidence) self_id = agent whose database this is, other_id = agent whose position is in database, position = position of other_id, sender = sender of assertion, time_of_position = time of position, confidence, update_time = time of update of db
     
     self_id = my_id
-    y = other_id 
-    z = position 
-    s = sender 
-    t = timeofposition
-    c = confidence
     globalvars.database[self_id][other_id] = {}
 
     globalvars.database[self_id][other_id]['position'] = position 
@@ -57,18 +64,44 @@ def update_database(my_id,other_id,sender,position,timeofposition,confidence,cur
     print_database(current_time)
     
 
-def check_database(my_id,other_agent,assertion_pos):
+def check_database(my_id,other_agent,assertion_pos,pos_time):
 
-    if not globalvars.database:
+
+
+    #check assertion database
+
+    if not globalvars.assertion:
         return 0,0
     else:
-        for key, value in globalvars.database.items():#myid
-            if key == my_id:
-                for ky, val in globalvars.database[key].items():#otheragent
-                    if ky == other_agent:
-                        for k, v in globalvars.database[key][ky].items():
-                            if k == 'position' and v == assertion_pos:
-                                return globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['sender']
+        for i in range(len(globalvars.assertion)):
+            if globalvars.assertion[i]['my_id'] == my_id and globalvars.assertion[i]['other_id'] == other_agent and globalvars.assertion[i]['position'] == assertion_pos and globalvars.assertion[i]['time_of_position'] == pos_time:
+                #check confidence table
+                if not globalvars.database:
+                    return 0,0
+                else:
+                    for key, value in globalvars.database.items():#myid
+                        if key == my_id:
+                            for ky, val in globalvars.database[key].items():#otheragent
+                                if ky == other_agent:
+                                    for k, v in globalvars.database[key][ky].items():
+                                        if k == 'position' and v == assertion_pos:
+                                            return globalvars.database[key][ky]['confidence'],globalvars.assertion[i]['sender']
+
+
+
+
+
+
+   # if not globalvars.database:
+   #     return 0,0
+   # else:
+   #     for key, value in globalvars.database.items():#myid
+   #         if key == my_id:
+   #             for ky, val in globalvars.database[key].items():#otheragent
+   #                 if ky == other_agent:
+   #                     for k, v in globalvars.database[key][ky].items():
+   #                         if k == 'position' and v == assertion_pos:
+   #                             return globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['sender']
 
     return 0,0
 
@@ -92,19 +125,8 @@ def print_database(event_time):
                         continue
 
 
-       # print("simulator: Reading database at ",event_time)
-       # for key, value in globalvars.database.items():
-       #     for ky, val in globalvars.database[key].items():
-       #         globalvars.database[key][ky]['confidence'] = globalvars.database[key][ky]['confidence']-globalvars.delta*(event_time-globalvars.database[key][ky]['update_time'])
-       #         globalvars.database[key][ky]['update_time'] = event_time
-       #         if globalvars.database[key][ky]['confidence'] < 0:
-       #             globalvars.database[key][ky]['confidence'] = 0
-       #         else:
-       #             continue
 
-        
-
-        #save to print to excel sheet
+        #save to print to excel sheet for 3 agents
         for key, value in globalvars.database.items():
             for ky, val in globalvars.database[key].items():
                for k, v in globalvars.database[key][ky].items():
@@ -132,6 +154,20 @@ def print_database(event_time):
     dbfile = "database_%d.txt" % (globalvars.testcase)
     write_to_file(dbfile,contents)
 
+   # string =""
+   # dbfile1 = "database_for_plot_%d.txt" % (globalvars.testcase)
+   # 
+   # for key, value in globalvars.database.items():
+   #     for ky, val in globalvars.database[key].items():
+   #        dbfile1 = "database_for_plot_%d_%d.txt" % (key,ky)
+   #        string += str(globalvars.database[key][ky]['position'])
+   #        string += " "
+   #        string += str(globalvars.database[key][ky]['confidence'])
+   #        string += " "
+   #        string += str(globalvars.database[key][ky]['update_time'])
+   #        string += '\n'
+   #        write_to_file(dbfile1,string)
+
 
 def print_to_excel():
     import pandas as pd
@@ -155,27 +191,35 @@ def update_confidence(direct_verification,agent,e,timeofevent):
 
         prover = e['details']['prover'] #agent whose position has to be proved correct
         claimant = e['details']['claimant']
+
+        print("SIMULATOR:prover:",prover,"claimant=",claimant)
         if success == 1:#direct verification success
             confidence = globalvars.direct_verification_score
-            update_database(agent,prover,claimant,e['details']['position'],e['details']['prover_pos_time'],confidence,timeofevent)
-            print("AGENT ",agent,": Updating confidence in position of agent ",prover," based on direct verification.")
+            update_assertiondatabase(agent,prover,claimant,e['details']['position'],e['details']['prover_pos_time'],confidence,timeofevent)
+            update_confdatabase(agent,prover,claimant,e['details']['position'],e['details']['prover_pos_time'],confidence,timeofevent)
+            print("AGENT ",agent,": Updating confidence about position of agent ",prover," based on direct verification. Confidence=",confidence)
             print("SIMULATOR: Database at time ",timeofevent,"for agent",agent,":", globalvars.database[agent])
 
 
-            #TODO broadcast = 1 How many times the same direct verification is to be sent
+            broadcast = 1 #How many times the same direct verification is to be sent
 
             #update trust
             if globalvars.trust_table[agent][prover] == 0:
                 globalvars.trust_table[agent][prover] = confidence
+                globalvars.trust_table[agent][prover] = (globalvars.trust_table[agent][prover]-0)/(globalvars.direct_verification_score-0)
             else:
                 globalvars.trust_table[agent][prover] = globalvars.trust_table[agent][prover]*confidence
                 globalvars.trust_table[agent][prover] = (globalvars.trust_table[agent][prover]-0)/(globalvars.direct_verification_score-0)
 
 
+
+
+
         if success == 0:#direct verification failure
             confidence = 0 #TODO should reduce by a factor V(d)
-            update_database(agent,prover,claimant,e['details']['position'],e['details']['prover_pos_time'],confidence,timeofevent)
-            print("AGENT ",agent,": Updating confidence in position of agent ",prover," based on direct verification.")
+            update_assertiondatabase(agent,prover,claimant,e['details']['position'],e['details']['prover_pos_time'],confidence,timeofevent)
+            update_confdatabase(agent,prover,claimant,e['details']['position'],e['details']['prover_pos_time'],confidence,timeofevent)
+            print("AGENT ",agent,": Updating confidence about position of agent ",prover," based on direct verification.")
             print("SIMULATOR: Database at time ",timeofevent,"for agent",agent,":", globalvars.database[agent])
 
     if not direct_verification:
@@ -185,11 +229,21 @@ def update_confidence(direct_verification,agent,e,timeofevent):
         trust = globalvars.trust_table[agent][claimant]
 
 
-        old_confidence, trusted_agent = check_database(agent,e['details']['agent'],e['details']['position'])
-        confidence = e['details']['confidence']*trust 
-         
-        update_database(agent,prover,claimant,e['details']['position'],e['details']['timeofposition'],confidence,timeofevent)
-        print("AGENT ",agent,": Updating confidence in position of agent ",prover," based on trust.")
+        old_confidence, trusted_agent = check_database(agent,e['details']['agent'],e['details']['position'],e['details']['timeofposition'])
+        confidence = e['details']['confidence']*trust
+
+
+        print("SIMULATOR: e['details']['confidence']=",e['details']['confidence'])
+        print("SIMULATOR: trust=",trust)
+        print("SIMULATOR: claimant=",claimant)
+        print("SIMULATOR: prover=",prover)
+        #confidence = e['details']['confidence']*trust TODO check old formula
+        
+        #TODO here it is needed thatb both old and new pos are kept
+        update_assertiondatabase(agent,prover,claimant,e['details']['position'],e['details']['timeofposition'],confidence,timeofevent)
+        update_confdatabase(agent,prover,claimant,e['details']['position'],e['details']['timeofposition'],confidence,timeofevent)
+        print("AGENT ",agent,": Updating confidence about position of agent ",prover," based on trust for agent",trusted_agent," Confidence=",confidence)
+        print("AGENT ",agent,": On agent",claimant,"Trust=",trust)
         print("SIMULATOR: Database at time ",timeofevent,"for agent",agent,":", globalvars.database[agent])
 
         if old_confidence < confidence:
@@ -442,7 +496,7 @@ def process_event(e):
         for i in range(globalvars.number_of_nodes): #everyone received because wireless communication is infinite
             if e['agent'] != i:#e['agent'] is making the assertion
 
-                ret = check_verifiability(e['details']['agent'],i) 
+                ret = check_verifiability(e['details']['agent'],i)#e['details']['agent'] is the agent about whom te assertion is made 
                 dist = calc_distance(e['agent'],i)
                 transmission_delay = 0.008 #seconds
                 dist = 0.3048*100*dist
@@ -456,21 +510,27 @@ def process_event(e):
                     
                     #if challenge not done yet or if the confidence is less than cf_min (Confidence Threshold)
                     #check database to find what the previous confidence is if already received an assertion for the same position
-                    confidence,trusted_agent = check_database(i,e['agent'],e['details']['position']) 
+                    confidence,trusted_agent = check_database(i,e['agent'],e['details']['position'],e['details']['timeofposition']) 
                     if confidence < globalvars.cf_min:
                         node_handler(i,"SEND_AND_RECEIVE_CHALLENGE",e,timeofevent)
 
                 else:
                     #it is not verifiable, i.e., direct verification is not possible
                     print("AGENT ",i,": Cannot directy verify the position of agent ",e['details']['agent'])
-                    confidence,trusted_agent = check_database(i,e['agent'],e['details']['position']) 
+                    confidence,trusted_agent = check_database(i,e['agent'],e['details']['position'],e['details']['timeofposition'])
+
                     if confidence < globalvars.cf_min:
-                        print("AGENT ",i,": Updating confidence based on trust in agent ",e['agent'])#e['agent'] made the assertion
-                        node_handler(i,"CONFIDENCE_UPDATE",e,timeofevent)
+                        print("AGENT ",i,": Updating confidence about position of agent ",e['details']['agent'] ,"based on trust for agent ",e['agent'])#e['agent'] made the assertion
+                        node_handler(i,"CONFIDENCE_UPDATE_INDIRECT_VERIF",e,timeofevent)
 
                     #Increase trust in the claimant according to trust in the agent that made the assertion previously
                     if confidence > 0:
-                        globalvars.trust_table[i][e['agent']] = globalvars.trust_table[i][trusted_agent]
+                        if trusted_agent != e['agent']:
+                            #if the same agent repeats the assertion, it cannot result in increase in trust for that
+                            globalvars.trust_table[i][e['agent']] = globalvars.trust_table[i][trusted_agent]
+                            print("AGENT ",i,": Assertion about the same position has been made previously by agent ",trusted_agent)
+                            print("AGENT ",i,": Increasing trust for agent",e['agent'],"according to trust for agent ",trusted_agent)
+
 
                    
                     
@@ -488,7 +548,7 @@ def process_event(e):
         
         print("SIMULATOR: Event:",e)
         timeofevent = e['time']+globalvars.e_now #time of response = time of confidence update = time of response + e_now (a smal time period after the response accounted for update time) 
-        node_handler(e['details']['challenger'],"CONFIDENCE_UPDATE",e,timeofevent)
+        node_handler(e['details']['challenger'],"CONFIDENCE_UPDATE_DIRECT_VERIF",e,timeofevent)
     
 
 
@@ -502,6 +562,7 @@ def node_handler(node_id,action,e,timeofevent):
         
         timeofevent = timeofevent+1
 
+        #if globalvars.now < 600:
         if globalvars.now < 300:
             print("SIMULATOR: Adding event for reading database at ",timeofevent)
             e = create_event(event_id,node_id,update,timeofevent)
@@ -520,6 +581,7 @@ def node_handler(node_id,action,e,timeofevent):
         globalvars.idn += 1
 
         print("SIMULATOR: Adding event for agent ",node_id," sending periodic assertion at ",timeofevent)
+        print("SIMULATOR: Position for agent ",node_id," in periodic assertion at ",timeofevent, " is ",globalvars.pos[node_id])
         e = create_event(event_id,node_id,assertion,timeofevent)
         globalvars.event_queue.append(deepcopy(e))
 
@@ -563,16 +625,15 @@ def node_handler(node_id,action,e,timeofevent):
         globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
 
         
-    if action == "CONFIDENCE_UPDATE":
+    if action == "CONFIDENCE_UPDATE_DIRECT_VERIF":
 
         if "RESPONSE" in e['event_id']:
         #if challenge-response happened, node_id verifies response, then increases/decreases confidence
 
-            print("AGENT ",node_id,": Updating confidence at ",timeofevent)
+            print("AGENT ",node_id,": Updating confidence about position of agent",e['details']['prover'],"at ",timeofevent)
             ret,conf = update_confidence(1,node_id,e,timeofevent)
 
 
-            print("resp dtype ",type(conf))
             if ret:
                 #broadcast assertion with updated confidence
 
@@ -586,15 +647,22 @@ def node_handler(node_id,action,e,timeofevent):
                 event_id = "ASSERTION_%03d" % (globalvars.idn)
                 globalvars.idn += 1
 
-                print("SIMULATOR: Adding event for agent ",node_id," sending assertion at ",timeofevent)
+                print("SIMULATOR: Adding event for agent ",node_id," sending assertion about position of agent ",e['details']['prover'],"at ",timeofevent)
                 e = create_event(event_id,node_id,assertion,timeofevent)
                 globalvars.event_queue.append(deepcopy(e))
 
                 #sort queue according to the simulated real time (time of event happening)
                 globalvars.event_queue = sorted(globalvars.event_queue, key=lambda x: x['time'])
 
+    
+
+    if action == "CONFIDENCE_UPDATE_INDIRECT_VERIF":
+
         if "ASSERTION" in e['event_id']:
         #direct verification was not possible, so node_id increases/decreases confidence through trust
+
+
+            print("SIMULATOR:Event:",e)
             ret,conf = update_confidence(0,node_id,e,timeofevent)
 
             if ret:
@@ -619,13 +687,10 @@ def node_handler(node_id,action,e,timeofevent):
 
 
 def change_position():
-    while 1:
-        if globalvars.now >= 20:
-            #change agent positions
-            filename = "pos_change_%d.txt" % (globalvars.testcase)
-            globalvars.pos = eval(read_file(filename))
-            print("SIMULATOR: position of all agents: ",globalvars.pos)
-            return
+        #change agent positions
+        filename = "pos_change_%d.txt" % (globalvars.testcase)
+        globalvars.pos = eval(read_file(filename))
+        print("SIMULATOR: position of all agents: ",globalvars.pos)
 
     
 
@@ -654,16 +719,12 @@ def main():
     e = {'event_id':"DEFAULT", 'agent':0,'time':0}
 
 
-    if globalvars.testcase == 7 or globalvars.testcase == 8:
-        #For agent motion
-        x = threading.Thread(target=change_position,daemon=True)
-        x.start()
-
+    
     ctr = 0
     while ctr < 20:
         for i in range(globalvars.number_of_nodes):
             node_handler(i,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period)
-            ctr = ctr + 1
+        ctr = ctr + 1
     node_handler(0,"UPDATE_DATABASE",e,0);
 
         
@@ -682,16 +743,29 @@ def main():
         print("\nSIMULATOR: Time of the Event: ",item['time'])
         globalvars.now = item['time']
 
+        if globalvars.now == 170:
+            if globalvars.testcase == 7 or globalvars.testcase == 8 or globalvars.testcase == 10:
+            #For agent motion
+                x = threading.Thread(target=change_position,daemon=True)
+                x.start()
+
+        
         print("\nSIMULATOR: EVENT QUEUE:\n")
         print("-----------------")
         print(*globalvars.event_queue,sep="\n")
         print("===============================================================================\n\n\n")
+
+
+        #process the events till 2 refresh periods
+        if globalvars.now >= 30:
+            break
 
     
 
     print_to_excel()
 
     print("SIMULATOR: End: trust:",globalvars.trust_table)
+    print("SIMULATOR: End: assertion database",globalvars.assertion)
     
 
 
