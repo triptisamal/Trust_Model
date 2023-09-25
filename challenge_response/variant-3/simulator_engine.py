@@ -67,7 +67,6 @@ def update_confdatabase(my_id,other_id,sender,position,timeofposition,confidence
 def check_database(my_id,other_agent,assertion_pos,pos_time):
 
 
-
     #check assertion database
 
     if not globalvars.assertion:
