@@ -32,6 +32,12 @@ def init():
     global time21 #2 database for 1
     global time10 #1 database for 0
     global time02 #0 database for 2
+    global trust02  #0 database for 2
+    global trust20 #0 database for 2
+    global trust01  #0 database for 2
+    global trust12  #0 database for 2
+    global trust21 #0 database for 2
+    global trust10 #0 database for 2
     
 
     number_of_nodes = 0
@@ -63,5 +69,11 @@ def init():
     time21 = ['t21'] #2 database for 1
     time10 = ['t10'] #1 database for 0
     time02 = ['t02'] #0 database for 2
+    trust02 = ['trust02'] #0 database for 2
+    trust20 = ['trust20'] #0 database for 2
+    trust01 = ['trust01'] #0 database for 2
+    trust12 = ['trust12'] #0 database for 2
+    trust21 = ['trust21']#0 database for 2
+    trust10 = ['trust10']#0 database for 2
 
 

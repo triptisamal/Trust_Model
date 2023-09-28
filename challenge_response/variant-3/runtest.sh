@@ -28,6 +28,7 @@ if [ "$testnumber" -eq "2" ] || [ "$testnumber" -eq "3" ] || [ "$testnumber" -eq
 
 
 then
+	#python3 simulator_engine.py 3 $testnumber 
 	python3 simulator_engine.py 3 $testnumber >out_$testnumber
 fi
 
