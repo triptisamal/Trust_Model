@@ -19,6 +19,7 @@ def init():
     global refresh_period
     global direct_verification_score
     global cf_min
+    global change_position
     global testcase
     global arr01 #0 database for 1
     global arr12 #1 database for 2 
@@ -56,6 +57,7 @@ def init():
     refresh_period = 15
     direct_verification_score = 20
     cf_min = 5
+    change_position = 0
     testcase = 1
     arr01 = ['01'] #0 database for 1
     arr12 = ['12'] #1 database for 2 

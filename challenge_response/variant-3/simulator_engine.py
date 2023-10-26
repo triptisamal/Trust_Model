@@ -4,6 +4,7 @@ import sys
 import random
 from itertools import permutations
 import threading
+import csv 
 
 from network_create import *
 import globalvars
@@ -52,14 +53,16 @@ def update_confdatabase(my_id,other_id,sender,position,timeofposition,confidence
     self_id = my_id
     globalvars.database[self_id][other_id] = {}
 
-    globalvars.database[self_id][other_id]['position'] = position 
+    globalvars.database[self_id][other_id]['position'] = position
+
+    print("DEBUG: Updating position in confidence database: ",position)
     globalvars.database[self_id][other_id]['time_of_position'] = timeofposition 
     globalvars.database[self_id][other_id]['confidence'] = confidence 
     globalvars.database[self_id][other_id]['update_time'] = current_time 
     
 
     print_database(current_time)
-    
+
 
 def check_confdatabase(my_id,other_id,position,pos_time):
     
@@ -126,6 +129,25 @@ def print_database(event_time):
                         continue
 
 
+     #   for key, value in globalvars.database.items():
+     #       if key == 2:
+     #           for ky, val in globalvars.database[key].items():
+     #               if ky == 1:
+     #                   row = [ky, globalvars.database[key][ky]['position'],globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['update_time']]
+     #                   with open("conf.csv", 'a') as csvfile:
+     #                       csvwriter = csv.writer(csvfile)
+     #                       csvwriter.writerow(row)
+
+
+        for key, value in globalvars.database.items():
+            if key == 0:
+                for ky, val in globalvars.database[key].items():
+                    if ky == 1:
+                        row = [ky, globalvars.database[key][ky]['position'],globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['update_time']]
+                        with open("conf.csv", 'a') as csvfile:
+                            csvwriter = csv.writer(csvfile)
+                            csvwriter.writerow(row)
+   
 
         #save to print to excel sheet for 3 agents
         for key, value in globalvars.database.items():
@@ -374,10 +396,8 @@ def is_in_direct_view(agent1,agent2):
     l = abs(globalvars.pos[agent2][0]-globalvars.pos[agent1][0])
     m = abs(globalvars.pos[agent2][1]-globalvars.pos[agent1][1])
     n = abs(globalvars.pos[agent2][2]-globalvars.pos[agent1][2])
- #   print("l",l) 
- #   print("m",m) 
- #   print("n",n) 
- #   
+
+
 
     #print("Direction ratios:",l,m,n)
     #Choose either of the two given points say, we choose (x1, y1, z1).
@@ -472,7 +492,7 @@ def check_verifiability(agent1,agent2):
         thres2 = 500 #feet
 
         d = calc_distance(agent1, agent2)
-
+        print("d",d)
         if d <= thres1:
             verifiability = 1
         elif d >= thres2:
@@ -499,6 +519,8 @@ def create_event(eventid,nodeid,packetdetails,timeofevent):
 
 def process_event(e):
     
+
+
     #Everytime an event is processed, print the database
     if "DATABASE" in e['event_id']:
         
@@ -514,6 +536,11 @@ def process_event(e):
 
 
     if "ASSERTION" in e['event_id']:
+        #if positions  have changed, the event position needs an update
+        if globalvars.change_position:
+            e['details']['position'] = globalvars.pos[e['details']['agent']]
+
+
         #send challenge for each position claim from each agent that received the claim
 
         for i in range(globalvars.number_of_nodes): #everyone received because wireless communication is infinite
@@ -527,6 +554,9 @@ def process_event(e):
                     propagation_delay = dist/globalvars.speed
                     timeofevent = e['time'] + transmission_delay + propagation_delay
                     #at timeofevent challenge will be received at agent i
+
+
+
 
                     if ret > 0:
                         #it is verifiable, i.e. direct verification is possible
@@ -548,20 +578,17 @@ def process_event(e):
                         
                         #RULE 16: have to update confidence based on trust for e['agent'] or e['details']['sender']
                         #check confidence database to see how much confidence i have
+
                         confidence = check_confdatabase(i,e['details']['agent'],e['details']['position'],e['details']['timeofposition'])
                         
 
                         #TODO
                         print("AGENT ",i,": Updating confidence about position of agent ",e['details']['agent'] ,"based on trust for agent ",e['agent'])#e['agent'] made the assertion
                         node_handler(i,"CONFIDENCE_UPDATE_INDIRECT_VERIF",e,timeofevent)
-                        #if confidence < globalvars.cf_min:
-                        #    print("AGENT ",i,": Updating confidence about position of agent ",e['details']['agent'] ,"based on trust for agent ",e['agent'])#e['agent'] made the assertion
-                        #    node_handler(i,"CONFIDENCE_UPDATE_INDIRECT_VERIF",e,timeofevent)
 
                         #check if another agent has previously made that claim. If so, update current trust according to how much trust you have for the agent that made the assertion previously
                         trusted_agent = check_assertiondatabase(i,e['details']['agent'],e['details']['position'],e['details']['timeofposition'])
                         if trusted_agent != 999:
-                                print("DEBUG: assertion:",e)
                                 print("DEBUG: trusted agent:",trusted_agent)
                                 #globalvars.trust_table[i][e['agent']] = globalvars.trust_table[i][trusted_agent]
                                 globalvars.trust_table[i][e['details']['agent']] = globalvars.trust_table[i][trusted_agent]
@@ -738,7 +765,6 @@ def change_position():
         globalvars.pos = eval(read_file(filename))
         print("SIMULATOR: position of all agents: ",globalvars.pos)
 
-    
 
 def main():
     '''Simulation engine'''
@@ -768,13 +794,29 @@ def main():
     
     ctr = 0
     #while ctr < 1:
+
     while ctr < 20:
         for i in range(globalvars.number_of_nodes):
             node_handler(i,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period)
         ctr = ctr + 1
+       # if ctr == 15:
+       #     change_position() ##change position while adding events
+           # x = threading.Thread(target=change_position,daemon=True)
+           # x.start()
+
+
     node_handler(0,"UPDATE_DATABASE",e,0);
 
+
+    fields = ['other_id','position','confidence','time']
+    with open("conf.csv", 'w') as csvfile:  
+    # creating a csv writer object  
+        csvwriter = csv.writer(csvfile)  
         
+    # writing the fields  
+        csvwriter.writerow(fields)
+
+
     print("SIMULATOR: Initial events:")
     print(*globalvars.event_queue,sep="\n")
     print("===============================================================================\n\n\n")
@@ -790,11 +832,14 @@ def main():
         print("\nSIMULATOR: Time of the Event: ",item['time'])
         globalvars.now = item['time']
 
-        if globalvars.now == 170:
-            if globalvars.testcase == 7 or globalvars.testcase == 8 or globalvars.testcase == 10:
+        if globalvars.now >= 200:
+            print("Changing positions while processing events")
+            if globalvars.testcase == 7 or globalvars.testcase == 8 or globalvars.testcase == 9 or globalvars.testcase == 10:
+                change_position()
+                globalvars.change_position = 1
             #For agent motion
-                x = threading.Thread(target=change_position,daemon=True)
-                x.start()
+                #x = threading.Thread(target=change_position,daemon=True)
+                #x.start()
 
         
        # print("\nSIMULATOR: EVENT QUEUE:\n")
@@ -804,8 +849,8 @@ def main():
 
 
         #process the events till 2 refresh periods
-        if globalvars.now >= 30:
-            break
+        #if globalvars.now >= 100:
+        #    break
 
     
 
