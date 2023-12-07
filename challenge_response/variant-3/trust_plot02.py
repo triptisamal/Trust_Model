@@ -1,16 +1,16 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_excel("confidence_plots-2.xlsx")
+df = pd.read_excel("trust_02.xlsx")
 #df = df.dropna()
-print(df['t02'])
+#print(df['t02'])
 
 # Create a figure and a set of subplots
 fig, ax = plt.subplots()
 
 # Plot data
-ax.plot(df['t02'], df['trust02'],marker='o',markersize=2)
-for xy in zip(df['t02'], df['trust02']):
+ax.plot(df['time'], df['trust'],marker='o',markersize=2)
+for xy in zip(df['time'], df['trust']):
   plt.annotate('(%.4f, %.4f)' % xy, xy=xy,rotation=45)
 # Set labels
 ax.set_xlabel('Time (s)')
@@ -23,8 +23,8 @@ fig.suptitle('Plots for trust held by agent 0 for agent 2 over 2 refresh periods
 #array1=df['02'].values.tolist()
 #plt.xticks(array)
 #plt.yticks([0.008,1, 2, 15,16,17,18,19,20])
-plt.xlim([0,31])
-plt.ylim([-1, 25])
+#plt.xlim([0,31])
+#plt.ylim([-1, 25])
 
 # Show plot
 plt.show()

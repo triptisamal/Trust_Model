@@ -4,6 +4,7 @@ import sys
 import random
 from itertools import permutations
 import threading
+import csv
 
 from network_create import *
 import globalvars
@@ -54,6 +55,18 @@ def update_confdatabase(my_id,other_id,sender,position,timeofposition,confidence
 
     print_database(current_time)
     
+def update_position_in_database(agentid,position):
+     
+    if not globalvars.database:
+        return 0
+    else:
+        for key, value in globalvars.database.items():#my_id
+            for ky, val in globalvars.database[key].items():#other_id
+                if ky == agentid:
+                    globalvars.database[key][ky]['position'] = position
+
+
+
 
 def check_confdatabase(my_id,other_id,position,pos_time):
     
@@ -117,7 +130,14 @@ def print_database(event_time):
                     else:
                         continue
 
-
+    for key, value in globalvars.database.items():
+        if key == 0:
+            for ky, val in globalvars.database[key].items():
+                if ky == 1:
+                    row = [ky, globalvars.database[key][ky]['position'],globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['update_time']]
+                    with open("conf.csv", 'a') as csvfile:
+                        csvwriter = csv.writer(csvfile)
+                        csvwriter.writerow(row)
 
         #save to print to excel sheet for 3 agents
         for key, value in globalvars.database.items():
@@ -200,6 +220,7 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
 
 
             broadcast = 1 #How many times the same direct verification is to be sent
+    
 
 
         if success == 0:#direct verification failure
@@ -208,6 +229,8 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
             update_confdatabase(agent,prover,claimant,e['details']['position'],e['details']['prover_pos_time'],confidence,timeofevent)
             print("AGENT ",agent,": Updating confidence about position of agent ",prover," based on direct verification.")
             print("SIMULATOR: Database at time ",timeofevent,"for agent",agent,":", globalvars.database[agent])
+
+
 
 
     return broadcast,confidence
@@ -449,6 +472,13 @@ def process_event(e):
 
 
     if "ASSERTION" in e['event_id']:
+
+                #if positions  have changed, the event position needs an update
+        if globalvars.change_position:
+            e['details']['position'] = globalvars.pos[e['details']['agent']]
+            update_position_in_database(e['details']['agent'],e['details']['position'])
+        
+
         #send challenge for each position claim from each agent that received the claim
 
         for i in range(globalvars.number_of_nodes): #everyone received because wireless communication is infinite
@@ -476,6 +506,7 @@ def process_event(e):
                         #if challenge not done yet or if the confidence is less than cf_min (Confidence Threshold)
                         if confidence < globalvars.cf_min:
                             node_handler(i,"SEND_AND_RECEIVE_CHALLENGE",e,timeofevent)
+
 
                     
 
@@ -650,6 +681,14 @@ def main():
         ctr = ctr + 1
     node_handler(0,"UPDATE_DATABASE",e,0);
 
+    fields = ['other_id','position','confidence','time']
+    with open("conf.csv", 'w') as csvfile:  
+    # creating a csv writer object  
+        csvwriter = csv.writer(csvfile)  
+        
+    # writing the fields  
+        csvwriter.writerow(fields)
+
         
     print("SIMULATOR: Initial events:")
     print(*globalvars.event_queue,sep="\n")
@@ -666,16 +705,19 @@ def main():
         print("\nSIMULATOR: Time of the Event: ",item['time'])
         globalvars.now = item['time']
 
-        if globalvars.now == 170:
-            if globalvars.testcase == 7 or globalvars.testcase == 8 or globalvars.testcase == 10:
+        if globalvars.now >= 200:
+            if globalvars.testcase == 7:
             #For agent motion
-                x = threading.Thread(target=change_position,daemon=True)
-                x.start()
+                change_position()
+                globalvars.change_position = 1
+
+              #  x = threading.Thread(target=change_position,daemon=True)
+              #  x.start()
 
         
         #process the events till 2 refresh periods
-        if globalvars.now >= 130:
-            break
+       # if globalvars.now >= 130:
+        #    break
 
     
 

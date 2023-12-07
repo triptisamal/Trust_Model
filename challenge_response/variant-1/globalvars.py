@@ -31,8 +31,9 @@ def init():
     global time21 #2 database for 1
     global time10 #1 database for 0
     global time02 #0 database for 2
-    
+    global change_position  
 
+    change_position = 0 
     number_of_nodes = 0
     pos = []
     topology = 0

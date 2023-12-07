@@ -16,8 +16,8 @@ ax.plot(df['t10'], df['10'],marker='o',markersize=2)
 #for xy in zip(df['trust02'],df['trust20']):
 #  plt.annotate('(%f,%f)' % xy, xy=xy)
 # Set labels
-ax.set_xlabel('Time (s)')
-ax.set_ylabel('Confidence')
+ax.set_xlabel('Time (s)', fontsize=19)
+ax.set_ylabel('Confidence',fontsize=19)
 
 # Set title
 #ax.set_title('Refresh Period=15 s, Direct Verification Score = 20, Confidence Threshold = 5, Verifiability between a_i and a_j = 1',fontsize=18)

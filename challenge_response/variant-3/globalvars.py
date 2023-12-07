@@ -39,6 +39,7 @@ def init():
     global trust12  #0 database for 2
     global trust21 #0 database for 2
     global trust10 #0 database for 2
+    global print_trust
     
 
     number_of_nodes = 0
@@ -53,12 +54,17 @@ def init():
     database = defaultdict(dict)
     assertion = []
     flag = 0
+    #temporarily disable
+    #delta = 0
+    #reduce by 1 in 1 second
     delta = 1
+    #delta = 0.1
     refresh_period = 15
     direct_verification_score = 20
     cf_min = 5
     change_position = 0
     testcase = 1
+    print_trust = 0
     arr01 = ['01'] #0 database for 1
     arr12 = ['12'] #1 database for 2 
     arr20 = ['20'] #2 database for 0

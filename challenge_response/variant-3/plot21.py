@@ -26,7 +26,7 @@ ax.set_ylabel('Confidence')
 #array1=df['02'].values.tolist()
 #plt.xticks(array)
 #plt.yticks([0.008,1, 2, 15,16,17,18,19,20])
-plt.xlim([0,150])
+plt.xlim([0,300])
 plt.ylim([-1, 25])
 ax.legend(fontsize="15")
 # Show plot

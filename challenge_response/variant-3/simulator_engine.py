@@ -54,8 +54,6 @@ def update_confdatabase(my_id,other_id,sender,position,timeofposition,confidence
     globalvars.database[self_id][other_id] = {}
 
     globalvars.database[self_id][other_id]['position'] = position
-
-    print("DEBUG: Updating position in confidence database: ",position)
     globalvars.database[self_id][other_id]['time_of_position'] = timeofposition 
     globalvars.database[self_id][other_id]['confidence'] = confidence 
     globalvars.database[self_id][other_id]['update_time'] = current_time 
@@ -73,6 +71,7 @@ def check_confdatabase(my_id,other_id,position,pos_time):
     if not globalvars.database:
         return 0
     else:
+        print(globalvars.database)
         for key, value in globalvars.database.items():#my_id
             if key == my_id:
                 for ky, val in globalvars.database[key].items():#other_id
@@ -99,7 +98,7 @@ def check_assertiondatabase(my_id,other_agent,assertion_pos,pos_time):
     print(globalvars.assertion)
     if not globalvars.assertion:
         print("No agent made that assertion before")
-        return 999
+        return None
     else:
         for i in range(len(globalvars.assertion)):
             if globalvars.assertion[i]['my_id'] == my_id and globalvars.assertion[i]['other_id'] == other_agent and globalvars.assertion[i]['position'] == assertion_pos and globalvars.assertion[i]['sender'] != other_agent:
@@ -107,7 +106,7 @@ def check_assertiondatabase(my_id,other_agent,assertion_pos,pos_time):
                 return globalvars.assertion[i]['sender']
 
     print("Debug: No agent made that assertion before")
-    return 999
+    return None
 
 
 def print_database(event_time):
@@ -128,74 +127,43 @@ def print_database(event_time):
                     else:
                         continue
 
+#for 0 and 1
+   #     for key, value in globalvars.database.items():
+   #         if key == 0:
+   #             for ky, val in globalvars.database[key].items():
+   #                 if ky == 1:
+   #                     row = [ky, globalvars.database[key][ky]['position'],globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['update_time']]
+   #                     with open("conf.csv", 'a') as csvfile:
+   #                         csvwriter = csv.writer(csvfile)
+   #                         csvwriter.writerow(row)
 
-     #   for key, value in globalvars.database.items():
-     #       if key == 2:
-     #           for ky, val in globalvars.database[key].items():
-     #               if ky == 1:
-     #                   row = [ky, globalvars.database[key][ky]['position'],globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['update_time']]
-     #                   with open("conf.csv", 'a') as csvfile:
-     #                       csvwriter = csv.writer(csvfile)
-     #                       csvwriter.writerow(row)
+#Second variant:
+
+##How I came to have trust in the agent: a) agreement with physical validation (i have physically validated a claim that this agent is also making. more trust
+# b) agreement with another agent I have received the same claim from (but have not verified physically): a little less trust.
 
 
         for key, value in globalvars.database.items():
             if key == 0:
                 for ky, val in globalvars.database[key].items():
-                    if ky == 1:
+                    if ky == 2:
                         row = [ky, globalvars.database[key][ky]['position'],globalvars.database[key][ky]['confidence'],globalvars.database[key][ky]['update_time']]
-                        with open("conf.csv", 'a') as csvfile:
+                        with open("conf_02.csv", 'a') as csvfile:
                             csvwriter = csv.writer(csvfile)
                             csvwriter.writerow(row)
-   
 
-        #save to print to excel sheet for 3 agents
-        for key, value in globalvars.database.items():
-            for ky, val in globalvars.database[key].items():
-               for k, v in globalvars.database[key][ky].items():
-                   if key == 0 and ky == 1:
-                       globalvars.arr01.append(globalvars.database[key][ky]['confidence'])
-                       globalvars.time01.append(globalvars.database[key][ky]['update_time'])
-                       globalvars.trust01.append(globalvars.trust_table[key][ky])
-                   if key == 0 and ky == 2:
-                       globalvars.arr02.append(globalvars.database[key][ky]['confidence'])
-                       globalvars.time02.append(globalvars.database[key][ky]['update_time'])
-                       globalvars.trust02.append(globalvars.trust_table[key][ky])
-                   if key == 1 and ky == 2:
-                       globalvars.arr12.append(globalvars.database[key][ky]['confidence'])
-                       globalvars.time12.append(globalvars.database[key][ky]['update_time'])
-                       globalvars.trust12.append(globalvars.trust_table[key][ky])
-                   if key == 1 and ky == 0:
-                       globalvars.arr10.append(globalvars.database[key][ky]['confidence'])
-                       globalvars.time10.append(globalvars.database[key][ky]['update_time'])
-                       globalvars.trust10.append(globalvars.trust_table[key][ky])
-                   if key == 2 and ky == 1:
-                       globalvars.arr21.append(globalvars.database[key][ky]['confidence'])
-                       globalvars.time21.append(globalvars.database[key][ky]['update_time'])
-                       globalvars.trust21.append(globalvars.trust_table[key][ky])
-                   if key == 2 and ky == 0:
-                       globalvars.arr20.append(globalvars.database[key][ky]['confidence'])
-                       globalvars.time20.append(globalvars.database[key][ky]['update_time'])
-                       globalvars.trust20.append(globalvars.trust_table[key][ky])
+        row = [0, 2, globalvars.trust_table[0][2],event_time]
+        with open("trust_02.csv", 'a') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(row)
+ 
+    
 
+    if globalvars.print_trust ==1:
+        contents = "%s at time %f\n" % (globalvars.database, event_time)
+        dbfile = "database_%d.txt" % (globalvars.testcase)
+        write_to_file(dbfile,contents)
 
-    contents = "%s at time %f\n" % (globalvars.database, event_time)
-    dbfile = "database_%d.txt" % (globalvars.testcase)
-    write_to_file(dbfile,contents)
-
-   # string =""
-   # dbfile1 = "database_for_plot_%d.txt" % (globalvars.testcase)
-   # 
-   # for key, value in globalvars.database.items():
-   #     for ky, val in globalvars.database[key].items():
-   #        dbfile1 = "database_for_plot_%d_%d.txt" % (key,ky)
-   #        string += str(globalvars.database[key][ky]['position'])
-   #        string += " "
-   #        string += str(globalvars.database[key][ky]['confidence'])
-   #        string += " "
-   #        string += str(globalvars.database[key][ky]['update_time'])
-   #        string += '\n'
-   #        write_to_file(dbfile1,string)
 
 
 def print_to_excel():
@@ -233,13 +201,17 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
             print("AGENT ",agent,": Updating confidence about position of agent ",prover," based on direct verification.")
             print("AGENT ",agent,": Confidence about position of agent ",prover,"=",confidence)
             print("SIMULATOR: Database at time ",timeofevent,"for agent",agent,":", globalvars.database[agent])
-
+            globalvars.print_trust = 0
 
             broadcast = 1 #How many times the same direct verification is to be sent
-
             #update trust
             if globalvars.trust_table[agent][prover] == 0:
                 globalvars.trust_table[agent][prover] = confidence
+
+                #condidence varies between (0, globalvars.direct_verification_score). 
+                #Therefore, trust varies between (0, globalvars.direct_verification_score).
+                #Normalize trust values to 0-1
+                # X_normalized = (X-X_min)/(X_max-X_min)
                 globalvars.trust_table[agent][prover] = (globalvars.trust_table[agent][prover]-0)/(globalvars.direct_verification_score-0)
             else:
                 globalvars.trust_table[agent][prover] = globalvars.trust_table[agent][prover]*confidence
@@ -247,8 +219,26 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
 
             print("AGENT ",agent,": Updated trust for agent ",prover,"=",globalvars.trust_table[agent][prover])
 
+            #print trust
+
+#            if agent == 0 and prover == 1:
+#                row = [0, 1, globalvars.trust_table[0][1],timeofevent]
+#                with open("trust_01.csv", 'a') as csvfile:
+#                    csvwriter = csv.writer(csvfile)
+#                    csvwriter.writerow(row)
+#
 
 
+            row = [0, 2, globalvars.trust_table[0][2],timeofevent]
+            with open("trust_02.csv", 'a') as csvfile:
+                csvwriter = csv.writer(csvfile)
+                csvwriter.writerow(row)
+                globalvars.print_trust = 1
+         #   row = [2, 0, globalvars.trust_table[2][0],timeofevent]
+         #   with open("trust_20.csv", 'a') as csvfile:
+         #       csvwriter = csv.writer(csvfile)
+         #       csvwriter.writerow(row)
+            
 
         if success == 0:#direct verification failure
             confidence = 0 #TODO should reduce by a factor V(d)
@@ -270,7 +260,8 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
         
         
 
-        c = e['details']['confidence']*trust #e['details']['confidence'] is the confidence that the claimant has       
+        c = trust #e['details']['confidence'] is the confidence that the claimant has       
+        #c = e['details']['confidence']*trust #e['details']['confidence'] is the confidence that the claimant has       
         print("c=",c)
         print("confidence present in assertion=",e['details']['confidence'])
         print("trust=",trust)
@@ -279,9 +270,11 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
         old_confidence = check_confdatabase(my_id,e['details']['agent'],e['details']['position'],e['details']['timeofposition'])
         print("AGENT ",my_id,": Old confidence about position of agent ",prover,"=",old_confidence)
         confidence = c + old_confidence
+        
+
         if confidence >= globalvars.direct_verification_score:
             confidence = globalvars.direct_verification_score #that is the maximum score, so at some point if trust results in a 100% confidence, it need not be increased further
-        
+        print("confidence calculated:",confidence) 
         #TODO here it is needed thatb both old and new pos are kept
         update_assertiondatabase(my_id,prover,claimant,e['details']['position'],e['details']['timeofposition'],confidence,timeofevent)
         update_confdatabase(my_id,prover,claimant,e['details']['position'],e['details']['timeofposition'],confidence,timeofevent)
@@ -588,10 +581,14 @@ def process_event(e):
 
                         #check if another agent has previously made that claim. If so, update current trust according to how much trust you have for the agent that made the assertion previously
                         trusted_agent = check_assertiondatabase(i,e['details']['agent'],e['details']['position'],e['details']['timeofposition'])
-                        if trusted_agent != 999:
-                                print("DEBUG: trusted agent:",trusted_agent)
-                                #globalvars.trust_table[i][e['agent']] = globalvars.trust_table[i][trusted_agent]
-                                globalvars.trust_table[i][e['details']['agent']] = globalvars.trust_table[i][trusted_agent]
+                        
+                        if trusted_agent != None:
+                            if e['details']['agent'] != trusted_agent:
+                               # alpha = 0.1
+                               # alpha = 0.5
+                                alpha = 0.9
+                                globalvars.trust_table[i][e['details']['agent']] = alpha*(globalvars.trust_table[i][trusted_agent])
+                                print("AGENT ",i,": Assigning trust with alpha = ",alpha, "trust=",globalvars.trust_table[i][e['details']['agent']])
                                 print("AGENT ",i,": Assertion about the same position has been made previously by agent ",trusted_agent)
                                 print("AGENT ",i,": Increasing trust for agent",e['details']['agent'],"according to trust for agent ",trusted_agent)
 
@@ -795,7 +792,7 @@ def main():
     ctr = 0
     #while ctr < 1:
 
-    while ctr < 20:
+    while ctr < 1:
         for i in range(globalvars.number_of_nodes):
             node_handler(i,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period)
         ctr = ctr + 1
@@ -817,6 +814,32 @@ def main():
         csvwriter.writerow(fields)
 
 
+    with open("conf_02.csv", 'w') as csvfile:  
+    # creating a csv writer object  
+        csvwriter = csv.writer(csvfile)  
+        
+    # writing the fields  
+        csvwriter.writerow(fields)
+
+    fields = ['my_id','other_id','trust','time']
+    with open("trust_01.csv", 'w') as csvfile:  
+    # creating a csv writer object  
+        csvwriter = csv.writer(csvfile)  
+    # writing the fields  
+        csvwriter.writerow(fields)
+
+    with open("trust_02.csv", 'w') as csvfile:  
+    # creating a csv writer object  
+        csvwriter = csv.writer(csvfile)  
+    # writing the fields  
+        csvwriter.writerow(fields)
+    
+    with open("trust_20.csv", 'w') as csvfile:  
+    # creating a csv writer object  
+        csvwriter = csv.writer(csvfile)  
+    # writing the fields  
+        csvwriter.writerow(fields)
+
     print("SIMULATOR: Initial events:")
     print(*globalvars.event_queue,sep="\n")
     print("===============================================================================\n\n\n")
@@ -834,7 +857,7 @@ def main():
 
         if globalvars.now >= 200:
             print("Changing positions while processing events")
-            if globalvars.testcase == 7 or globalvars.testcase == 8 or globalvars.testcase == 9 or globalvars.testcase == 10:
+            if globalvars.testcase == 7 or globalvars.testcase == 8 or globalvars.testcase == 9 or globalvars.testcase == 10 or globalvars.testcase == 12:
                 change_position()
                 globalvars.change_position = 1
             #For agent motion
