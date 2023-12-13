@@ -1,6 +1,4 @@
 rm out_*
-rm confidence_*
-rm database_*
 rm *.csv
-rm conf.xlsx
-rm trust_*.xlsx
+rm conf_trust_*.xlsx
+#rm trust_*.xlsx
