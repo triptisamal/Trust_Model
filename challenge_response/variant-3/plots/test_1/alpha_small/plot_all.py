@@ -8,8 +8,16 @@ number_of_refresh_period = int(sys.argv[2])
 
 #convert csv to xlsx
 df = pd.read_csv("./conf_trust_0-2.csv")
-df.to_excel("conf_trust_0-2.xlsx", index=False)
+df.to_excel("conf_trust_0-2-org.xlsx", index=False)
 
+##handling duplicates
+#sort in decsending order according to confidence
+df = df.sort_values(by='confidence', ascending=False)
+#drop duplicates for column "time" 
+df = df.drop_duplicates(subset='time', keep="first")
+df = df.sort_values(by='time', ascending=True)
+
+df.to_excel("conf_trust_0-2.xlsx", index=False)
 plt.figure()          
 
 df_time = pd.read_excel("conf_trust_0-2.xlsx", sheet_name='Sheet1', usecols="A")
@@ -49,13 +57,12 @@ for i in range(rows):
 #menMeans = (20, 35, 30, 35, 27)
 #menStd = (2, 3, 4, 1, 2)
 
-
-width = 0.3       # the width of the bars
+width = 0.2       # the width of the bars
 N=len(conf)
 ind = np.array(time)
-plt.ylim(0.0, 1.5)
-plt.bar(ind,trust_01, width, color='r', label='$T_{0}(1)$')
-plt.bar(ind+width,trust_02, width, color='b', label='$T_{0}(2)$')
+plt.ylim(0.0, 1.3)
+plt.bar(ind,trust_01, width, color='r', alpha=0.5,label='$T_{0}(1)$')
+plt.bar(ind+width,trust_02, width, color='b', alpha=0.5, label='$T_{0}(2)$')
 
 plt.ylabel('Trust')      
 #plt.ylabel('Trust $T_{i}(j)$')      
@@ -67,8 +74,11 @@ y = conf
 
 plt.xticks(np.arange(min(x), max(x), 1),rotation=45)
 axes2 = plt.twinx()
-axes2.plot(x, y, color='k', marker='o',markersize=3,label='$C_{0}(p_{2t})$')
+axes2.plot(x, y, color='k', marker='o',markersize=4,label='$C_{0}(p_{2t})$')
 axes2.set_ylim(0, 23)
 axes2.set_ylabel('Confidence')
 axes2.legend(loc='upper left')
+
+axes2.set_title('$a_{0}$ can directly verify $a_{1}$, but not $a_{2}$.Trust $T_{0}(2)$ generated from agreement between $a_{1}$ and $a_{2}$')
+plt.suptitle('Confidence and Trust values when Confidence/Trust or both are updated in the database of $a_{0}$')
 plt.show()
