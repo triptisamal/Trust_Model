@@ -79,6 +79,6 @@ axes2.set_ylim(0, 23)
 axes2.set_ylabel('Confidence')
 axes2.legend(loc='upper left')
 
-axes2.set_title('$a_{0}$ can directly verify $a_{1}$, but not $a_{2}$.Trust $T_{0}(2)$ generated from agreement between $a_{1}$ and $a_{2}$')
-plt.suptitle('Confidence and Trust values when Confidence/Trust or both are updated in the database of $a_{0}$')
+axes2.set_title('$a_{0}$ can directly verify $a_{1}$, but not $a_{2}$.Trust $T_{0}(1)$ is generated from physical verification of position of $a_{1}$ by $a_{0}$.Trust $T_{0}(2)$ is generated from agreement between $a_{1}$ and $a_{2}$.\n$R = 15 s$.$P_{v} = 20$')
+plt.suptitle('Variation of Confidence without physical verification')
 plt.show()

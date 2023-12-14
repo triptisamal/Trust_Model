@@ -57,6 +57,7 @@ def update_confdatabase(my_id,other_id,sender,position,timeofposition,confidence
     globalvars.database[self_id][other_id]['time_of_position'] = timeofposition 
     globalvars.database[self_id][other_id]['confidence'] = confidence 
     globalvars.database[self_id][other_id]['update_time'] = current_time 
+    print("DEBUG:timeofevent=",current_time)
     
 
     print_database(current_time)
@@ -134,15 +135,12 @@ def print_database(event_time):
 def extract_id(column):
 
     #column = "trust_%d-%d", we want to extract both %d
-    print("col name = ",column)
     string = ""
     for i in column.split('_'):
         string = i
     
-    print("string = ",string)
 
     res = [int(i) for i in string.split('-') if i.isdigit()]
-    print("res=",res) 
     i = res[0]
     j = res[1]
 
@@ -161,6 +159,7 @@ def print_to_csv(current_time,my_id,other_id):
                         if k == 'confidence':
 
                             row = [current_time, globalvars.database[key][ky]['confidence']]
+                            print("DEBUG:csv timeofevent=",current_time)
                             
                             
                             filename = "conf_trust_%d-%d.csv" % (key,ky)
@@ -174,23 +173,25 @@ def print_to_csv(current_time,my_id,other_id):
 
                             for r in list(trust_rows):
                                 if "trust" in r:
-                                    print("true:",r)
                                     i,j = extract_id(r)
                                     row.append(globalvars.trust_table[i][j])
                             
-                            print("row:",row)
                             file.close()
                             with open(filename, 'a') as csvfile:
                                 csvwriter = csv.writer(csvfile)
                                 csvwriter.writerow(row)
+                            csvfile.close()
                         else:
                             continue
     else:
         #Write to file everytime a change in confidence is triggered
-        
+        print("DEBUG:csv timeofevent=",current_time)
+        print("DEBUG:my_id=",my_id,"other_id=",other_id,globalvars.database[my_id][other_id]['confidence']) 
+
+
         row = [current_time, globalvars.database[my_id][other_id]['confidence']]
         filename = "conf_trust_%d-%d.csv" % (my_id,other_id)
-        
+        print(filename) 
         file = open(filename)
         type = (file)
         csvreader = csv.reader(file)
@@ -207,6 +208,7 @@ def print_to_csv(current_time,my_id,other_id):
         with open(filename, 'a') as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerow(row)
+        csvfile.close()
         
 
 #def print_to_excel():
@@ -274,7 +276,7 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
         claimant = e['details']['sender'] #agent who made the assertion
         prover = e['details']['agent'] #agent whose position has to be proved correct
         
-
+        print("DEBUG:timeofevent=",timeofevent)
         trust = globalvars.trust_table[my_id][claimant] #my trust/ agent with my_id id 's trust for claimant
 
 
@@ -307,6 +309,7 @@ def update_confidence(direct_verification,my_id,e,timeofevent):
         print("AGENT ",my_id,": Confidence", cstring,"=",confidence)
         #TODO here it is needed thatb both old and new pos are kept
         update_assertiondatabase(my_id,prover,claimant,e['details']['position'],e['details']['timeofposition'],confidence,timeofevent)
+        print("DEBUG:timeofevent=",timeofevent)
         update_confdatabase(my_id,prover,claimant,e['details']['position'],e['details']['timeofposition'],confidence,timeofevent)
         
         new_confidence = check_confdatabase(my_id,e['details']['agent'],e['details']['position'],e['details']['timeofposition'])
@@ -607,7 +610,11 @@ def process_event(e):
                     dist = 0.3048*100*dist
                     propagation_delay = dist/globalvars.speed
                     timeofevent = e['time'] + transmission_delay + propagation_delay
+
+
+
                     #at timeofevent challenge will be received at agent i
+                    print("AGENT ",i,": Asertion received at",e['time'],"Time of verifying:",timeofevent)
 
 
 
@@ -867,11 +874,9 @@ def main():
     ctr = 0
     #while ctr < 1:
 
-    while ctr < 10:
+    while ctr < 20:
         for i in range(globalvars.number_of_nodes):
             node_handler(i,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period)
-        node_handler(0,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period)
-        node_handler(2,"SEND_PERIODIC_ASSERTION",e,ctr*globalvars.refresh_period)
         ctr = ctr + 1
     
 
