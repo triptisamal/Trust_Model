@@ -61,24 +61,30 @@ width = 0.2       # the width of the bars
 N=len(conf)
 ind = np.array(time)
 plt.ylim(0.0, 1.3)
-plt.bar(ind,trust_01, width, color='r', alpha=0.5,label='$T_{0}(1)$')
-plt.bar(ind+width,trust_02, width, color='b', alpha=0.5, label='$T_{0}(2)$')
+plt.bar(ind,trust_01, width, color='r', alpha=0.5,label='$T_{j}(k)$')
+plt.bar(ind+width,trust_02, width, color='b', alpha=0.5, label='$T_{j}(i)$')
 
-plt.ylabel('Trust')      
+plt.ylabel('Trust',fontsize=25)      
 #plt.ylabel('Trust $T_{i}(j)$')      
-plt.xlabel('Time (s)')      
-plt.legend()
+plt.xlabel('Time (s)',fontsize=25)      
+plt.legend(fontsize="22")
 
 x = time
 y = conf
 
-plt.xticks(np.arange(min(x), max(x), 1),rotation=45)
-axes2 = plt.twinx()
-axes2.plot(x, y, color='k', marker='o',markersize=4,label='$C_{0}(p_{2t})$')
-axes2.set_ylim(0, 23)
-axes2.set_ylabel('Confidence')
-axes2.legend(loc='upper left')
+plt.xticks(np.arange(min(x), max(x), 1),rotation=45,fontsize=16)
+plt.yticks(fontsize=16)
 
-axes2.set_title('$a_{0}$ can directly verify $a_{1}$, but not $a_{2}$.Trust $T_{0}(1)$ is generated from physical verification of position of $a_{1}$ by $a_{0}$.Trust $T_{0}(2)$ is generated from agreement between $a_{1}$ and $a_{2}$.\n$R = 15 s$.$P_{v} = 20$')
-plt.suptitle('Variation of Confidence without physical verification')
+
+axes2 = plt.twinx()
+
+axes2.plot(x, y, color='k', marker='o',markersize=4,label='$C_{j}(p_{it})$')
+axes2.set_ylim(0, 23)
+y_ticks=axes2.get_yticks()
+axes2.set_yticklabels(y_ticks, fontsize=16)
+axes2.set_ylabel('Confidence',fontsize=25)
+axes2.legend(loc='upper left',fontsize="25")
+
+#axes2.set_title('$a_{0}$ can directly verify $a_{1}$, but not $a_{2}$.Trust $T_{0}(1)$ is generated from physical verification of position of $a_{1}$ by $a_{0}$.Trust $T_{0}(2)$ is generated from agreement between $a_{1}$ and $a_{2}$.\n$R = 15 s$.$P_{v} = 20$',fontsize=15)
+#plt.suptitle('Variation of Confidence without physical verification',fontsize=24)
 plt.show()

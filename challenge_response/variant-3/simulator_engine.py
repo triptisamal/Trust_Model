@@ -159,8 +159,6 @@ def print_to_csv(current_time,my_id,other_id):
                         if k == 'confidence':
 
                             row = [current_time, globalvars.database[key][ky]['confidence']]
-                            print("DEBUG:csv timeofevent=",current_time)
-                            
                             
                             filename = "conf_trust_%d-%d.csv" % (key,ky)
                             
@@ -177,6 +175,9 @@ def print_to_csv(current_time,my_id,other_id):
                                     row.append(globalvars.trust_table[i][j])
                             
                             file.close()
+
+                            row.append("NA")
+                            
                             with open(filename, 'a') as csvfile:
                                 csvwriter = csv.writer(csvfile)
                                 csvwriter.writerow(row)
@@ -185,9 +186,6 @@ def print_to_csv(current_time,my_id,other_id):
                             continue
     else:
         #Write to file everytime a change in confidence is triggered
-        print("DEBUG:csv timeofevent=",current_time)
-        print("DEBUG:my_id=",my_id,"other_id=",other_id,globalvars.database[my_id][other_id]['confidence']) 
-
 
         row = [current_time, globalvars.database[my_id][other_id]['confidence']]
         filename = "conf_trust_%d-%d.csv" % (my_id,other_id)
@@ -205,6 +203,8 @@ def print_to_csv(current_time,my_id,other_id):
                 row.append(globalvars.trust_table[i][j])
         file.close()
 
+        row.append(globalvars.pos[other_id])
+        
         with open(filename, 'a') as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerow(row)
@@ -895,6 +895,8 @@ def main():
     fields = ['time','confidence']
     for i in range(len(trust_fields)):
         fields.append(trust_fields[i])
+    
+    fields.append('position')
 
 
     for (my_id, other_id) in permutations(range(globalvars.number_of_nodes), 2):

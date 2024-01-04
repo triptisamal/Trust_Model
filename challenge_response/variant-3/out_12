@@ -1,0 +1,510 @@
+SIMULATOR: Nothing to read in database at  0 seconds.
+{'event_id': 'ASSERTION_000', 'agent': 0, 'time': 0, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'ASSERTION_001', 'agent': 1, 'time': 0, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 0, 'timeofevent': 0}}
+{'event_id': 'DATABASE_040', 'agent': 0, 'time': 1, 'details': 'DB is updated'}
+{'event_id': 'ASSERTION_002', 'agent': 0, 'time': 15, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 15, 'timeofevent': 15}}
+{'event_id': 'ASSERTION_003', 'agent': 1, 'time': 15, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 15, 'timeofevent': 15}}
+{'event_id': 'ASSERTION_004', 'agent': 0, 'time': 30, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 30, 'timeofevent': 30}}
+{'event_id': 'ASSERTION_005', 'agent': 1, 'time': 30, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 30, 'timeofevent': 30}}
+{'event_id': 'ASSERTION_006', 'agent': 0, 'time': 45, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 45, 'timeofevent': 45}}
+{'event_id': 'ASSERTION_007', 'agent': 1, 'time': 45, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 45, 'timeofevent': 45}}
+{'event_id': 'ASSERTION_008', 'agent': 0, 'time': 60, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 60, 'timeofevent': 60}}
+{'event_id': 'ASSERTION_009', 'agent': 1, 'time': 60, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 60, 'timeofevent': 60}}
+{'event_id': 'ASSERTION_010', 'agent': 0, 'time': 75, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
+{'event_id': 'ASSERTION_011', 'agent': 1, 'time': 75, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 75, 'timeofevent': 75}}
+{'event_id': 'ASSERTION_012', 'agent': 0, 'time': 90, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 90, 'timeofevent': 90}}
+{'event_id': 'ASSERTION_013', 'agent': 1, 'time': 90, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 90, 'timeofevent': 90}}
+{'event_id': 'ASSERTION_014', 'agent': 0, 'time': 105, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 105, 'timeofevent': 105}}
+{'event_id': 'ASSERTION_015', 'agent': 1, 'time': 105, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 105, 'timeofevent': 105}}
+{'event_id': 'ASSERTION_016', 'agent': 0, 'time': 120, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
+{'event_id': 'ASSERTION_017', 'agent': 1, 'time': 120, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 120, 'timeofevent': 120}}
+{'event_id': 'ASSERTION_018', 'agent': 0, 'time': 135, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 135, 'timeofevent': 135}}
+{'event_id': 'ASSERTION_019', 'agent': 1, 'time': 135, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 135, 'timeofevent': 135}}
+{'event_id': 'ASSERTION_020', 'agent': 0, 'time': 150, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 150, 'timeofevent': 150}}
+{'event_id': 'ASSERTION_021', 'agent': 1, 'time': 150, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 150, 'timeofevent': 150}}
+{'event_id': 'ASSERTION_022', 'agent': 0, 'time': 165, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
+{'event_id': 'ASSERTION_023', 'agent': 1, 'time': 165, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 165, 'timeofevent': 165}}
+{'event_id': 'ASSERTION_024', 'agent': 0, 'time': 180, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 180, 'timeofevent': 180}}
+{'event_id': 'ASSERTION_025', 'agent': 1, 'time': 180, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 180, 'timeofevent': 180}}
+{'event_id': 'ASSERTION_026', 'agent': 0, 'time': 195, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 195, 'timeofevent': 195}}
+{'event_id': 'ASSERTION_027', 'agent': 1, 'time': 195, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 195, 'timeofevent': 195}}
+{'event_id': 'ASSERTION_028', 'agent': 0, 'time': 210, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 210, 'timeofevent': 210}}
+{'event_id': 'ASSERTION_029', 'agent': 1, 'time': 210, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 210, 'timeofevent': 210}}
+{'event_id': 'ASSERTION_030', 'agent': 0, 'time': 225, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 225, 'timeofevent': 225}}
+{'event_id': 'ASSERTION_031', 'agent': 1, 'time': 225, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 225, 'timeofevent': 225}}
+{'event_id': 'ASSERTION_032', 'agent': 0, 'time': 240, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 240, 'timeofevent': 240}}
+{'event_id': 'ASSERTION_033', 'agent': 1, 'time': 240, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 240, 'timeofevent': 240}}
+{'event_id': 'ASSERTION_034', 'agent': 0, 'time': 255, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 255, 'timeofevent': 255}}
+{'event_id': 'ASSERTION_035', 'agent': 1, 'time': 255, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 255, 'timeofevent': 255}}
+{'event_id': 'ASSERTION_036', 'agent': 0, 'time': 270, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 270, 'timeofevent': 270}}
+{'event_id': 'ASSERTION_037', 'agent': 1, 'time': 270, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 270, 'timeofevent': 270}}
+{'event_id': 'ASSERTION_038', 'agent': 0, 'time': 285, 'details': {'sender': 0, 'agent': 0, 'position': (0, 0, 0), 'confidence': 20, 'timeofposition': 285, 'timeofevent': 285}}
+{'event_id': 'ASSERTION_039', 'agent': 1, 'time': 285, 'details': {'sender': 1, 'agent': 1, 'position': (0, 1, 0), 'confidence': 20, 'timeofposition': 285, 'timeofevent': 285}}
+===============================================================================
+
+
+
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 0 Time of verifying: 0.00801016703362164
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 0  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 0 Time of verifying: 0.00801016703362164
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 0  seconds for agent 1
+SIMULATOR: Nothing to read in database at  1 seconds.
+SIMULATOR: Nothing to read in database at  2 seconds.
+SIMULATOR: Nothing to read in database at  3 seconds.
+AGENT  1 : Updating confidence about position of agent 0 at  3.208010167033622 seconds.
+AGENT  1 : Updating confidence about position of agent  0  based on direct verification.
+AGENT  1 : Confidence about position of agent  0 = 20
+AGENT  1 : Updated trust for agent  0 = 1.0
+DEBUG:timeofevent= 3.208010167033622
+conf_trust_1-0.csv
+AGENT  0 : Updating confidence about position of agent 1 at  3.208010167033622 seconds.
+AGENT  0 : Updating confidence about position of agent  1  based on direct verification.
+AGENT  0 : Confidence about position of agent  1 = 20
+AGENT  0 : Updated trust for agent  1 = 1.0
+DEBUG:timeofevent= 3.208010167033622
+conf_trust_0-1.csv
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 15 Time of verifying: 15.008010167033621
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 15  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 15 Time of verifying: 15.008010167033621
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 15  seconds for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 30 Time of verifying: 30.00801016703362
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 30  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 30 Time of verifying: 30.00801016703362
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 30  seconds for agent 1
+AGENT  1 : Updating confidence about position of agent 0 at  33.20801016703362 seconds.
+AGENT  1 : Updating confidence about position of agent  0  based on direct verification.
+AGENT  1 : Confidence about position of agent  0 = 20
+AGENT  1 : Updated trust for agent  0 = 1.0
+DEBUG:timeofevent= 33.20801016703362
+conf_trust_1-0.csv
+AGENT  0 : Updating confidence about position of agent 1 at  33.20801016703362 seconds.
+AGENT  0 : Updating confidence about position of agent  1  based on direct verification.
+AGENT  0 : Confidence about position of agent  1 = 20
+AGENT  0 : Updated trust for agent  1 = 1.0
+DEBUG:timeofevent= 33.20801016703362
+conf_trust_0-1.csv
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 45 Time of verifying: 45.008010167033625
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 45  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 45 Time of verifying: 45.008010167033625
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 45  seconds for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 60 Time of verifying: 60.008010167033625
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 60  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 60 Time of verifying: 60.008010167033625
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 60  seconds for agent 1
+AGENT  1 : Updating confidence about position of agent 0 at  63.20801016703363 seconds.
+AGENT  1 : Updating confidence about position of agent  0  based on direct verification.
+AGENT  1 : Confidence about position of agent  0 = 20
+AGENT  1 : Updated trust for agent  0 = 1.0
+DEBUG:timeofevent= 63.20801016703363
+conf_trust_1-0.csv
+AGENT  0 : Updating confidence about position of agent 1 at  63.20801016703363 seconds.
+AGENT  0 : Updating confidence about position of agent  1  based on direct verification.
+AGENT  0 : Confidence about position of agent  1 = 20
+AGENT  0 : Updated trust for agent  1 = 1.0
+DEBUG:timeofevent= 63.20801016703363
+conf_trust_0-1.csv
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 75 Time of verifying: 75.00801016703362
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 75  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 75 Time of verifying: 75.00801016703362
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 75  seconds for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 90 Time of verifying: 90.00801016703362
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 90  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 90 Time of verifying: 90.00801016703362
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 90  seconds for agent 1
+AGENT  1 : Updating confidence about position of agent 0 at  93.20801016703362 seconds.
+AGENT  1 : Updating confidence about position of agent  0  based on direct verification.
+AGENT  1 : Confidence about position of agent  0 = 20
+AGENT  1 : Updated trust for agent  0 = 1.0
+DEBUG:timeofevent= 93.20801016703362
+conf_trust_1-0.csv
+AGENT  0 : Updating confidence about position of agent 1 at  93.20801016703362 seconds.
+AGENT  0 : Updating confidence about position of agent  1  based on direct verification.
+AGENT  0 : Confidence about position of agent  1 = 20
+AGENT  0 : Updated trust for agent  1 = 1.0
+DEBUG:timeofevent= 93.20801016703362
+conf_trust_0-1.csv
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 105 Time of verifying: 105.00801016703362
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 105  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 105 Time of verifying: 105.00801016703362
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 105  seconds for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 120 Time of verifying: 120.00801016703362
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 120  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 120 Time of verifying: 120.00801016703362
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 120  seconds for agent 1
+AGENT  1 : Updating confidence about position of agent 0 at  123.20801016703362 seconds.
+AGENT  1 : Updating confidence about position of agent  0  based on direct verification.
+AGENT  1 : Confidence about position of agent  0 = 20
+AGENT  1 : Updated trust for agent  0 = 1.0
+DEBUG:timeofevent= 123.20801016703362
+conf_trust_1-0.csv
+AGENT  0 : Updating confidence about position of agent 1 at  123.20801016703362 seconds.
+AGENT  0 : Updating confidence about position of agent  1  based on direct verification.
+AGENT  0 : Confidence about position of agent  1 = 20
+AGENT  0 : Updated trust for agent  1 = 1.0
+DEBUG:timeofevent= 123.20801016703362
+conf_trust_0-1.csv
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 135 Time of verifying: 135.00801016703363
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 135  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 135 Time of verifying: 135.00801016703363
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 135  seconds for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 150 Time of verifying: 150.00801016703363
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 150  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 150 Time of verifying: 150.00801016703363
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 150  seconds for agent 1
+AGENT  1 : Updating confidence about position of agent 0 at  153.20801016703362 seconds.
+AGENT  1 : Updating confidence about position of agent  0  based on direct verification.
+AGENT  1 : Confidence about position of agent  0 = 20
+AGENT  1 : Updated trust for agent  0 = 1.0
+DEBUG:timeofevent= 153.20801016703362
+conf_trust_1-0.csv
+AGENT  0 : Updating confidence about position of agent 1 at  153.20801016703362 seconds.
+AGENT  0 : Updating confidence about position of agent  1  based on direct verification.
+AGENT  0 : Confidence about position of agent  1 = 20
+AGENT  0 : Updated trust for agent  1 = 1.0
+DEBUG:timeofevent= 153.20801016703362
+conf_trust_0-1.csv
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 165 Time of verifying: 165.00801016703363
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 165  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 165 Time of verifying: 165.00801016703363
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 165  seconds for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 180 Time of verifying: 180.00801016703363
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 180  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 180 Time of verifying: 180.00801016703363
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 180  seconds for agent 1
+AGENT  1 : Updating confidence about position of agent 0 at  183.20801016703362 seconds.
+AGENT  1 : Updating confidence about position of agent  0  based on direct verification.
+AGENT  1 : Confidence about position of agent  0 = 20
+AGENT  1 : Updated trust for agent  0 = 1.0
+DEBUG:timeofevent= 183.20801016703362
+conf_trust_1-0.csv
+AGENT  0 : Updating confidence about position of agent 1 at  183.20801016703362 seconds.
+AGENT  0 : Updating confidence about position of agent  1  based on direct verification.
+AGENT  0 : Confidence about position of agent  1 = 20
+AGENT  0 : Updated trust for agent  1 = 1.0
+DEBUG:timeofevent= 183.20801016703362
+conf_trust_0-1.csv
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  1
+AGENT  1 : Asertion received at 195 Time of verifying: 195.00801016703363
+AGENT  1 : Can directly verify the position of agent  0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 195  seconds for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  1
+AGENT  0 : Asertion received at 195 Time of verifying: 195.00801016703363
+AGENT  0 : Can directly verify the position of agent  1
+AGENT  0 : Retrieving confidence for position  (0, 1, 0) at time 195  seconds for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  0
+AGENT  1 : Asertion received at 210 Time of verifying: 210.00807116923536
+AGENT  1 : Cannot directly verify the position of agent  0
+AGENT  1 : Updating confidence about position of agent  0 based on trust for agent  0 at  210.00807116923536 seconds.
+DEBUG:timeofevent= 210.00807116923536
+ASSERTION: 
+e['details']['sender']= 0
+e['details']['agent']= 0
+e['details']['position']= (0, 0, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 210
+AGENT  1 : Trust by agent 1 in agent 0 , T_1(0) = 1.0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 210  seconds for agent 0
+AGENT  1 : Current confidence about position of agent  0 (as in DB)= 0
+AGENT  1 : Sum of old confidence ( 0 ) and new confidence ( 20.0 ), C_1(p_(0,210)) = 20.0
+AGENT  1 : Confidence C_1(p_(0,210)) about position of agent  0  calculated based on trust T_1(0) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  1 : Confidence C_1(p_(0,210)) = 20
+DEBUG:timeofevent= 210.00807116923536
+DEBUG:timeofevent= 210.00807116923536
+conf_trust_1-0.csv
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 210  seconds for agent 0
+AGENT  1 : Checking assertion database for position  (0, 0, 0) at time 210 for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  0
+AGENT  0 : Asertion received at 210 Time of verifying: 210.00807116923536
+AGENT  0 : Cannot directly verify the position of agent  1
+AGENT  0 : Updating confidence about position of agent  1 based on trust for agent  1 at  210.00807116923536 seconds.
+DEBUG:timeofevent= 210.00807116923536
+ASSERTION: 
+e['details']['sender']= 1
+e['details']['agent']= 1
+e['details']['position']= (0, 7, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 210
+AGENT  0 : Trust by agent 0 in agent 1 , T_0(1) = 1.0
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 210  seconds for agent 1
+AGENT  0 : Current confidence about position of agent  1 (as in DB)= 0
+AGENT  0 : Sum of old confidence ( 0 ) and new confidence ( 20.0 ), C_0(p_(1,210)) = 20.0
+AGENT  0 : Confidence C_0(p_(1,210)) about position of agent  1  calculated based on trust T_0(1) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  0 : Confidence C_0(p_(1,210)) = 20
+DEBUG:timeofevent= 210.00807116923536
+DEBUG:timeofevent= 210.00807116923536
+conf_trust_0-1.csv
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 210  seconds for agent 1
+AGENT  0 : Checking assertion database for position  (0, 7, 0) at time 210 for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  0
+AGENT  1 : Asertion received at 225 Time of verifying: 225.00807116923536
+AGENT  1 : Cannot directly verify the position of agent  0
+AGENT  1 : Updating confidence about position of agent  0 based on trust for agent  0 at  225.00807116923536 seconds.
+DEBUG:timeofevent= 225.00807116923536
+ASSERTION: 
+e['details']['sender']= 0
+e['details']['agent']= 0
+e['details']['position']= (0, 0, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 225
+AGENT  1 : Trust by agent 1 in agent 0 , T_1(0) = 1.0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 225  seconds for agent 0
+AGENT  1 : Current confidence about position of agent  0 (as in DB)= 6
+AGENT  1 : Sum of old confidence ( 6 ) and new confidence ( 20.0 ), C_1(p_(0,225)) = 26.0
+AGENT  1 : Confidence C_1(p_(0,225)) about position of agent  0  calculated based on trust T_1(0) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  1 : Confidence C_1(p_(0,225)) = 20
+DEBUG:timeofevent= 225.00807116923536
+DEBUG:timeofevent= 225.00807116923536
+conf_trust_1-0.csv
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 225  seconds for agent 0
+AGENT  1 : Checking assertion database for position  (0, 0, 0) at time 225 for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  0
+AGENT  0 : Asertion received at 225 Time of verifying: 225.00807116923536
+AGENT  0 : Cannot directly verify the position of agent  1
+AGENT  0 : Updating confidence about position of agent  1 based on trust for agent  1 at  225.00807116923536 seconds.
+DEBUG:timeofevent= 225.00807116923536
+ASSERTION: 
+e['details']['sender']= 1
+e['details']['agent']= 1
+e['details']['position']= (0, 7, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 225
+AGENT  0 : Trust by agent 0 in agent 1 , T_0(1) = 1.0
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 225  seconds for agent 1
+AGENT  0 : Current confidence about position of agent  1 (as in DB)= 4.9919288307646354
+AGENT  0 : Sum of old confidence ( 4.9919288307646354 ) and new confidence ( 20.0 ), C_0(p_(1,225)) = 24.991928830764635
+AGENT  0 : Confidence C_0(p_(1,225)) about position of agent  1  calculated based on trust T_0(1) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  0 : Confidence C_0(p_(1,225)) = 20
+DEBUG:timeofevent= 225.00807116923536
+DEBUG:timeofevent= 225.00807116923536
+conf_trust_0-1.csv
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 225  seconds for agent 1
+AGENT  0 : Checking assertion database for position  (0, 7, 0) at time 225 for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  0
+AGENT  1 : Asertion received at 240 Time of verifying: 240.00807116923536
+AGENT  1 : Cannot directly verify the position of agent  0
+AGENT  1 : Updating confidence about position of agent  0 based on trust for agent  0 at  240.00807116923536 seconds.
+DEBUG:timeofevent= 240.00807116923536
+ASSERTION: 
+e['details']['sender']= 0
+e['details']['agent']= 0
+e['details']['position']= (0, 0, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 240
+AGENT  1 : Trust by agent 1 in agent 0 , T_1(0) = 1.0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 240  seconds for agent 0
+AGENT  1 : Current confidence about position of agent  0 (as in DB)= 6
+AGENT  1 : Sum of old confidence ( 6 ) and new confidence ( 20.0 ), C_1(p_(0,240)) = 26.0
+AGENT  1 : Confidence C_1(p_(0,240)) about position of agent  0  calculated based on trust T_1(0) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  1 : Confidence C_1(p_(0,240)) = 20
+DEBUG:timeofevent= 240.00807116923536
+DEBUG:timeofevent= 240.00807116923536
+conf_trust_1-0.csv
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 240  seconds for agent 0
+AGENT  1 : Checking assertion database for position  (0, 0, 0) at time 240 for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  0
+AGENT  0 : Asertion received at 240 Time of verifying: 240.00807116923536
+AGENT  0 : Cannot directly verify the position of agent  1
+AGENT  0 : Updating confidence about position of agent  1 based on trust for agent  1 at  240.00807116923536 seconds.
+DEBUG:timeofevent= 240.00807116923536
+ASSERTION: 
+e['details']['sender']= 1
+e['details']['agent']= 1
+e['details']['position']= (0, 7, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 240
+AGENT  0 : Trust by agent 0 in agent 1 , T_0(1) = 1.0
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 240  seconds for agent 1
+AGENT  0 : Current confidence about position of agent  1 (as in DB)= 4.9919288307646354
+AGENT  0 : Sum of old confidence ( 4.9919288307646354 ) and new confidence ( 20.0 ), C_0(p_(1,240)) = 24.991928830764635
+AGENT  0 : Confidence C_0(p_(1,240)) about position of agent  1  calculated based on trust T_0(1) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  0 : Confidence C_0(p_(1,240)) = 20
+DEBUG:timeofevent= 240.00807116923536
+DEBUG:timeofevent= 240.00807116923536
+conf_trust_0-1.csv
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 240  seconds for agent 1
+AGENT  0 : Checking assertion database for position  (0, 7, 0) at time 240 for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  0
+AGENT  1 : Asertion received at 255 Time of verifying: 255.00807116923536
+AGENT  1 : Cannot directly verify the position of agent  0
+AGENT  1 : Updating confidence about position of agent  0 based on trust for agent  0 at  255.00807116923536 seconds.
+DEBUG:timeofevent= 255.00807116923536
+ASSERTION: 
+e['details']['sender']= 0
+e['details']['agent']= 0
+e['details']['position']= (0, 0, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 255
+AGENT  1 : Trust by agent 1 in agent 0 , T_1(0) = 1.0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 255  seconds for agent 0
+AGENT  1 : Current confidence about position of agent  0 (as in DB)= 6
+AGENT  1 : Sum of old confidence ( 6 ) and new confidence ( 20.0 ), C_1(p_(0,255)) = 26.0
+AGENT  1 : Confidence C_1(p_(0,255)) about position of agent  0  calculated based on trust T_1(0) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  1 : Confidence C_1(p_(0,255)) = 20
+DEBUG:timeofevent= 255.00807116923536
+DEBUG:timeofevent= 255.00807116923536
+conf_trust_1-0.csv
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 255  seconds for agent 0
+AGENT  1 : Checking assertion database for position  (0, 0, 0) at time 255 for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  0
+AGENT  0 : Asertion received at 255 Time of verifying: 255.00807116923536
+AGENT  0 : Cannot directly verify the position of agent  1
+AGENT  0 : Updating confidence about position of agent  1 based on trust for agent  1 at  255.00807116923536 seconds.
+DEBUG:timeofevent= 255.00807116923536
+ASSERTION: 
+e['details']['sender']= 1
+e['details']['agent']= 1
+e['details']['position']= (0, 7, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 255
+AGENT  0 : Trust by agent 0 in agent 1 , T_0(1) = 1.0
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 255  seconds for agent 1
+AGENT  0 : Current confidence about position of agent  1 (as in DB)= 4.9919288307646354
+AGENT  0 : Sum of old confidence ( 4.9919288307646354 ) and new confidence ( 20.0 ), C_0(p_(1,255)) = 24.991928830764635
+AGENT  0 : Confidence C_0(p_(1,255)) about position of agent  1  calculated based on trust T_0(1) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  0 : Confidence C_0(p_(1,255)) = 20
+DEBUG:timeofevent= 255.00807116923536
+DEBUG:timeofevent= 255.00807116923536
+conf_trust_0-1.csv
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 255  seconds for agent 1
+AGENT  0 : Checking assertion database for position  (0, 7, 0) at time 255 for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  0
+AGENT  1 : Asertion received at 270 Time of verifying: 270.00807116923534
+AGENT  1 : Cannot directly verify the position of agent  0
+AGENT  1 : Updating confidence about position of agent  0 based on trust for agent  0 at  270.00807116923534 seconds.
+DEBUG:timeofevent= 270.00807116923534
+ASSERTION: 
+e['details']['sender']= 0
+e['details']['agent']= 0
+e['details']['position']= (0, 0, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 270
+AGENT  1 : Trust by agent 1 in agent 0 , T_1(0) = 1.0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 270  seconds for agent 0
+AGENT  1 : Current confidence about position of agent  0 (as in DB)= 6
+AGENT  1 : Sum of old confidence ( 6 ) and new confidence ( 20.0 ), C_1(p_(0,270)) = 26.0
+AGENT  1 : Confidence C_1(p_(0,270)) about position of agent  0  calculated based on trust T_1(0) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  1 : Confidence C_1(p_(0,270)) = 20
+DEBUG:timeofevent= 270.00807116923534
+DEBUG:timeofevent= 270.00807116923534
+conf_trust_1-0.csv
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 270  seconds for agent 0
+AGENT  1 : Checking assertion database for position  (0, 0, 0) at time 270 for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  0
+AGENT  0 : Asertion received at 270 Time of verifying: 270.00807116923534
+AGENT  0 : Cannot directly verify the position of agent  1
+AGENT  0 : Updating confidence about position of agent  1 based on trust for agent  1 at  270.00807116923534 seconds.
+DEBUG:timeofevent= 270.00807116923534
+ASSERTION: 
+e['details']['sender']= 1
+e['details']['agent']= 1
+e['details']['position']= (0, 7, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 270
+AGENT  0 : Trust by agent 0 in agent 1 , T_0(1) = 1.0
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 270  seconds for agent 1
+AGENT  0 : Current confidence about position of agent  1 (as in DB)= 4.991928830764664
+AGENT  0 : Sum of old confidence ( 4.991928830764664 ) and new confidence ( 20.0 ), C_0(p_(1,270)) = 24.991928830764664
+AGENT  0 : Confidence C_0(p_(1,270)) about position of agent  1  calculated based on trust T_0(1) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  0 : Confidence C_0(p_(1,270)) = 20
+DEBUG:timeofevent= 270.00807116923534
+DEBUG:timeofevent= 270.00807116923534
+conf_trust_0-1.csv
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 270  seconds for agent 1
+AGENT  0 : Checking assertion database for position  (0, 7, 0) at time 270 for agent 1
+SIMULATOR: Agents  0 and 1  are in direct view; Verifiability =  0
+AGENT  1 : Asertion received at 285 Time of verifying: 285.00807116923534
+AGENT  1 : Cannot directly verify the position of agent  0
+AGENT  1 : Updating confidence about position of agent  0 based on trust for agent  0 at  285.00807116923534 seconds.
+DEBUG:timeofevent= 285.00807116923534
+ASSERTION: 
+e['details']['sender']= 0
+e['details']['agent']= 0
+e['details']['position']= (0, 0, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 285
+AGENT  1 : Trust by agent 1 in agent 0 , T_1(0) = 1.0
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 285  seconds for agent 0
+AGENT  1 : Current confidence about position of agent  0 (as in DB)= 6
+AGENT  1 : Sum of old confidence ( 6 ) and new confidence ( 20.0 ), C_1(p_(0,285)) = 26.0
+AGENT  1 : Confidence C_1(p_(0,285)) about position of agent  0  calculated based on trust T_1(0) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  1 : Confidence C_1(p_(0,285)) = 20
+DEBUG:timeofevent= 285.00807116923534
+DEBUG:timeofevent= 285.00807116923534
+conf_trust_1-0.csv
+AGENT  1 : Retrieving confidence for position  (0, 0, 0) at time 285  seconds for agent 0
+AGENT  1 : Checking assertion database for position  (0, 0, 0) at time 285 for agent 0
+SIMULATOR: Agents  1 and 0  are in direct view; Verifiability =  0
+AGENT  0 : Asertion received at 285 Time of verifying: 285.00807116923534
+AGENT  0 : Cannot directly verify the position of agent  1
+AGENT  0 : Updating confidence about position of agent  1 based on trust for agent  1 at  285.00807116923534 seconds.
+DEBUG:timeofevent= 285.00807116923534
+ASSERTION: 
+e['details']['sender']= 1
+e['details']['agent']= 1
+e['details']['position']= (0, 7, 0)
+e['details']['confidence']= 20
+e['details']['timeofposition']= 285
+AGENT  0 : Trust by agent 0 in agent 1 , T_0(1) = 1.0
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 285  seconds for agent 1
+AGENT  0 : Current confidence about position of agent  1 (as in DB)= 4.991928830764664
+AGENT  0 : Sum of old confidence ( 4.991928830764664 ) and new confidence ( 20.0 ), C_0(p_(1,285)) = 24.991928830764664
+AGENT  0 : Confidence C_0(p_(1,285)) about position of agent  1  calculated based on trust T_0(1) ( 1.0 ) and confidence given in assertion ( 20 )
+AGENT  0 : Confidence C_0(p_(1,285)) = 20
+DEBUG:timeofevent= 285.00807116923534
+DEBUG:timeofevent= 285.00807116923534
+conf_trust_0-1.csv
+AGENT  0 : Retrieving confidence for position  (0, 7, 0) at time 285  seconds for agent 1
+AGENT  0 : Checking assertion database for position  (0, 7, 0) at time 285 for agent 1
+SIMULATION END

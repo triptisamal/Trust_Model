@@ -28,7 +28,7 @@ ax.set_ylabel('Confidence',fontsize=19)
 #plt.yticks([0.008,1, 2, 15,16,17,18,19,20])
 plt.xlim([0,300])
 plt.ylim([-1, 25])
-ax.legend(fontsize="18")
+ax.legend(fontsize="19")
 # Show plot
 plt.show()
 
