@@ -1,7 +1,7 @@
 import plotly.express as px
 import pandas as pd
 
-df = pd.read_excel("conf_trust_02.xlsx", sheet_name='Sheet1', usecols="C,D")
+df = pd.read_excel("conf_trust_0-2.xlsx", sheet_name='Sheet1', usecols="B,C,D")
 
 fig = px.parallel_coordinates(df, color="confidence", labels={"trust": "Trust",
                 "confidence": "Confidence", },
