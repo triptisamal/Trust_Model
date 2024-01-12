@@ -1,2 +1,2 @@
-mv out_2 $1
+mv out_* $1
 mv *.csv $1

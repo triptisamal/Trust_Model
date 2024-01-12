@@ -922,17 +922,16 @@ def main():
         process_event(item)
 
       #  print("\nSIMULATOR: Event processed: ",item)
-      #  print("\nSIMULATOR: Time of the Event: ",item['time'])
+        print("\nSIMULATOR: Time of the Event: ",item['time'])
         globalvars.now = item['time']
-
+        if globalvars.now >= 4:
+            if globalvars.testcase == 14 or globalvars.testcase == 15:
+                sys.exit()
+        
         if globalvars.now >= 200:
             if globalvars.testcase == 7 or globalvars.testcase == 8 or globalvars.testcase == 9 or globalvars.testcase == 10 or globalvars.testcase == 12:
                 change_position()
                 globalvars.change_position = 1
-            #For agent motion
-                #x = threading.Thread(target=change_position,daemon=True)
-                #x.start()
-
         
        # print("\nSIMULATOR: EVENT QUEUE:\n")
        # print("-----------------")

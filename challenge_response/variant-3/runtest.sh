@@ -35,9 +35,9 @@ then
 	python3 simulator_engine.py 3 $testnumber >out_$testnumber
 fi
 
-if [ "$testnumber" -eq "11" ]
+if [ "$testnumber" -eq "14" ]
 then
-	python3 simulator_engine.py 12 $testnumber >out_$testnumber
+	python3 simulator_engine.py 16 $testnumber >out_$testnumber
 fi
 
 if [ "$testnumber" -eq "10" ]
