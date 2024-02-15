@@ -447,17 +447,17 @@ def is_in_direct_view(agent1,agent2):
     #agent 1 is actually the same position as event['details']['position']
 
 
-    #find the equation of the line segment joining agent1 and agent2
+    #find the equation of the line segment joining agent1 and agent2//two given points
 
     #Find the DR’s (Direction Ratios) by taking the difference of the corresponding position coordinates of the two given points. l = (x2 – x1), m = (y2 – y1), n = (z2 – z1); Here l, m, n are the DR’s.
 
-    l = abs(globalvars.pos[agent2][0]-globalvars.pos[agent1][0])
-    m = abs(globalvars.pos[agent2][1]-globalvars.pos[agent1][1])
-    n = abs(globalvars.pos[agent2][2]-globalvars.pos[agent1][2])
+    l = abs(globalvars.pos[agent2][0]-globalvars.pos[agent1][0])#3
+    m = abs(globalvars.pos[agent2][1]-globalvars.pos[agent1][1])#3
+    n = abs(globalvars.pos[agent2][2]-globalvars.pos[agent1][2])#0
 
+    #e.g. point (x,y,z) = (globalvars.pos[agent2][0],globalvars.pos[agent2][1],globalvars.pos[agent2][3])
 
-
-    #print("Direction ratios:",l,m,n)
+    print("Direction ratios:",l,m,n)
     #Choose either of the two given points say, we choose (x1, y1, z1).
     #Write the required equation of the straight line passing through the points (x1, y1, z1) and (x2, y2, z2). L : (x – x1)/l = (y – y1)/m = (z – z1)/n
 
@@ -470,9 +470,7 @@ def is_in_direct_view(agent1,agent2):
                 a = abs(globalvars.pos[i][0]-globalvars.pos[agent1][0])/l
                 b = abs(globalvars.pos[i][1]-globalvars.pos[agent1][1])/m
                 c = abs(globalvars.pos[i][2]-globalvars.pos[agent1][2])/n
- #               print("a=",a)
- #               print("b=",b)
- #               print("c=",c)
+                
                 if a == b and b == c:
                     return 0 #not in direct view, some point is blocking
                 else:
@@ -481,9 +479,7 @@ def is_in_direct_view(agent1,agent2):
             if l == 0 and m>0 and n>0:
                 b = abs(globalvars.pos[i][1]-globalvars.pos[agent1][1])/m
                 c = abs(globalvars.pos[i][2]-globalvars.pos[agent1][2])/n
-         #       print("c=",c)
-         #       print("b=",b)
-                if b == c and globalvars.pos[i][0] == globalvars.pos[agent1][0] and globalvars.pos[i][0] == c:
+                if b == c and globalvars.pos[i][0] == globalvars.pos[agent1][0] and (globalvars.pos[agent1][2] < globalvars.pos[i][2] < globalvars.pos[agent2][2] or globalvars.pos[agent2][2] < globalvars.pos[i][2] < globalvars.pos[agent1][2]): #tested
                     return 0
                 else:
                     continue
@@ -491,9 +487,7 @@ def is_in_direct_view(agent1,agent2):
             if l > 0 and m == 0 and n>0:
                 a = abs(globalvars.pos[i][0]-globalvars.pos[agent1][0])/l
                 c = abs(globalvars.pos[i][2]-globalvars.pos[agent1][2])/n
-         #       print("a=",a)
-         #       print("c=",c)
-                if a == c and globalvars.pos[i][1] == globalvars.pos[agent1][1] and globalvars.pos[agent1][1] == c:
+                if a == c and globalvars.pos[i][1] == globalvars.pos[agent1][1] and (globalvars.pos[agent1][0] < globalvars.pos[i][0] < globalvars.pos[agent2][0] or globalvars.pos[agent2][0] < globalvars.pos[i][0] < globalvars.pos[agent1][0]): #tested
                     return 0
                 else:
                     continue
@@ -501,10 +495,8 @@ def is_in_direct_view(agent1,agent2):
             if l > 0 and m > 0 and n == 0:
                 a = abs(globalvars.pos[i][0]-globalvars.pos[agent1][0])/l
                 b = abs(globalvars.pos[i][1]-globalvars.pos[agent1][1])/m
-         #       print("a=",a)
-         #       print("b=",b)
 
-                if b == a and globalvars.pos[i][2] == globalvars.pos[agent1][2] and globalvars.pos[agent1][1] == a:
+                if b == a and globalvars.pos[i][2] == globalvars.pos[agent1][2] and (globalvars.pos[agent1][1] < globalvars.pos[i][1] < globalvars.pos[agent2][1] or globalvars.pos[agent2][1] < globalvars.pos[i][1] < globalvars.pos[agent1][1]): ##tested 
                     return 0
                 else:
                     continue
@@ -924,7 +916,7 @@ def main():
       #  print("\nSIMULATOR: Event processed: ",item)
         print("\nSIMULATOR: Time of the Event: ",item['time'])
         globalvars.now = item['time']
-        if globalvars.now >= 4:
+        if globalvars.now >= 3.5:
             if globalvars.testcase == 14 or globalvars.testcase == 15:
                 sys.exit()
         

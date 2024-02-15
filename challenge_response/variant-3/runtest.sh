@@ -15,7 +15,9 @@ echo "9. 2 agents, V(d) was 0, changes to > 0"
 echo "12. Test 0-d: 2 agents with V(d) > 0, one agent moves and V(d) changes to < 0"
 echo "13. All: from 0 to 8"
 echo "14. 12 agents, all stationary"
-echo "15. 12 agents, one moving"
+echo "15. 12 agents, all stationary but different positions"
+echo "16. 12 agents, all stationary but different positions"
+echo "17. 12 agents, one moving"
 
 
 read testnumber
@@ -35,7 +37,7 @@ then
 	python3 simulator_engine.py 3 $testnumber >out_$testnumber
 fi
 
-if [ "$testnumber" -eq "14" ]
+if [ "$testnumber" -eq "14" ] || [ "$testnumber" -eq "15" ] || [ "$testnumber" -eq "16" ]  
 then
 	python3 simulator_engine.py 16 $testnumber >out_$testnumber
 fi
